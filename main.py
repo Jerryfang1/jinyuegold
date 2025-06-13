@@ -30,7 +30,7 @@ def webhook():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-text = event.message.text.strip()
+    text = event.message.text.strip()
 
     if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
         # 取得今天日期，轉為純數字字串格式如 20250613
