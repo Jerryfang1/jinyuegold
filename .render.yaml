@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: line-gold-price
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python main.py"
+    envVars:
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        value: your_line_channel_access_token
+      - key: LINE_CHANNEL_SECRET
+        value: your_line_channel_secret
