@@ -5,7 +5,7 @@ import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import datetime
+from datetime import date
 
 app = Flask(__name__)
 
@@ -34,14 +34,13 @@ def handle_message(event):
 
     if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
         # 取得今天日期，轉為純數字字串格式如 20250613
-        today = str(int(datetime.now().strftime("%Y%m%d")))
+        today = date.today()
         records = sheet.get_all_records()
 
         # 比對時也轉換資料表中的日期格式（去除斜線與補零）
         matched = next((
             row for row in records
-            if str(row.get("日期")).replace("/", "").replace("-", "") == today
-        ), None)
+            if isinstance(row["日期"], date) and row["日期"] == today), None)
 
         if matched:
             sell_price = matched.get("飾金賣出")
