@@ -32,9 +32,9 @@ def webhook():
 def handle_message(event):
     if event.message.text in ["查詢金價"]:
         user_id = event.source.user_id
-        today = datetime.now().strftime("%Y/%m/%d")
+        today = str(int(datetime.now().strftime("%Y/%m/%d")))
         records = sheet.get_all_records()
-        matched = next((row for row in records if row['日期'] == today), None)
+        matched = next((row for row in records if str(row.get('日期')).replace("/", "").replace("-", "") == today), None)
 
         if matched:
             price = matched['飾金賣出']
