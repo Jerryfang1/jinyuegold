@@ -5,7 +5,7 @@ import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import date
+from datetime import datetime, date
 
 app = Flask(__name__)
 
@@ -33,27 +33,35 @@ def handle_message(event):
     text = event.message.text.strip()
 
     if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
-        # 取得今天日期，轉為純數字字串格式如 20250613
         today = date.today()
+
+        # 產生幾種可接受的日期格式（可能出現在 Google Sheet 中）
+        possible_dates = [
+            today.strftime("%Y/%#m/%#d"),  # e.g. 2025/6/13 (windows)
+            today.strftime("%Y/%m/%d"),    # e.g. 2025/06/13
+            today.strftime("%Y-%m-%d"),    # e.g. 2025-06-13
+        ]
+
         records = sheet.get_all_records()
 
-        # 比對時也轉換資料表中的日期格式（去除斜線與補零）
-        matched = next((
-            row for row in records
-            if isinstance(row.get("日期")], date) and row["日期"] == today), None)
+        matched = next(
+            (row for row in records
+             if str(row.get("日期")) in possible_dates),
+            None
+        )
 
         if matched:
-            sell_price = matched.get("飾金賣出")
-            buy_price = matched.get("飾金買入")
-            bar_price = matched.get("條金")
+            sell_price = matched.get("飾金賣出", "N/A")
+            buy_price = matched.get("飾金買入", "N/A")
+            bar_price = matched.get("條金", "N/A")
             msg = (
-                f"📅 今日金價報價：\n"
-                f"🔸 飾金賣出：{sell_price} 元/錢\n"
-                f"🔹 飾金買入：{buy_price} 元/錢\n"
+                f"📅 今日金價報價：\\n"
+                f"🔸 飾金賣出：{sell_price} 元/錢\\n"
+                f"🔹 飾金買入：{buy_price} 元/錢\\n"
                 f"🪙 條金參考：{bar_price} 元/錢"
             )
         else:
-            msg = f"❗ 未找到今天的金價資料，請稍後再試或聯繫店家。"
+            msg = "❗ 未找到今天的金價資料，請稍後再試或聯繫店家。"
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
 
