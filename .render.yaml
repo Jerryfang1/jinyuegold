@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: line-gold-price
+    name: gold
     env: python
     plan: free
     buildCommand: ""
