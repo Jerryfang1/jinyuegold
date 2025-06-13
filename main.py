@@ -40,7 +40,7 @@ def handle_message(event):
         # 比對時也轉換資料表中的日期格式（去除斜線與補零）
         matched = next((
             row for row in records
-            if isinstance(row["日期"], date) and row["日期"] == today), None)
+            if isinstance(row.get("日期")], date) and row["日期"] == today), None)
 
         if matched:
             sell_price = matched.get("飾金賣出")
