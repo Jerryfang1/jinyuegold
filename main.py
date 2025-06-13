@@ -1,6 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import TextSendMessage, MessageEvent, TextMessage
+from linebot.models import TextSendMessage, MessageEvent, TextMessage, PostbackEvent
 import os
 import json
 import gspread
@@ -21,18 +21,29 @@ client = gspread.authorize(creds)
 # 打開 Sheet
 sheet = client.open("金玥報價").worksheet("金價")
 
-@app.route("/webhook", methods=['POST'])
-def webhook():
+@app.route("/callback", methods=["POST"])
+def callback():
+    signature = request.headers["X-Line-Signature"]
     body = request.get_data(as_text=True)
-    signature = request.headers['X-Line-Signature']
-    handler.handle(body, signature)
-    return 'OK'
-
+    try:
+        handler.handle(body, signature)
+    except InvalidSignatureError:
+        abort(400)
+    return "OK"
+    
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.strip()
+    if text in ["金價", "查詢黃金報價", "黃金報價"]:
+        reply_gold_price(event.reply_token)
 
-    if text in ["金價查詢"]:
+@handler.add(PostbackEvent)
+def handle_postback(event):
+    data = event.postback.data
+    if data == "action=gold":
+        reply_gold_price(event.reply_token)
+
+def reply_gold_price(reply_token):
         today = datetime.now().strftime("%Y/%-m/%-d")  # mac/linux
         alt_today = datetime.now().strftime("%Y/%#m/%#d")  # Windows
         records = sheet.get_all_records()
