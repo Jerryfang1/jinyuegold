@@ -32,7 +32,7 @@ def webhook():
 def handle_message(event):
     text = event.message.text.strip()
 
-    if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
+    if text in ["金價查詢"]:
         today = datetime.now().strftime("%Y/%-m/%-d")  # mac/linux
         alt_today = datetime.now().strftime("%Y/%#m/%#d")  # Windows
         records = sheet.get_all_records()
@@ -46,14 +46,17 @@ def handle_message(event):
             sell_price = matched.get("飾金賣出", "N/A")
             buy_price = matched.get("飾金買入", "N/A")
             bar_price = matched.get("條金", "N/A")
+            data_str = str(matched.get("日期", ""))
+            time_str = str(matched.get("時間", ""))
             msg = (
-                f"📅 今日金價報價：\n"
-                f"🔸 飾金賣出：{sell_price} 元/錢\n"
-                f"🔹 飾金買入：{buy_price} 元/錢\n"
-                f"🪙 條金參考：{bar_price} 元/錢"
+                f"報價時間：{date_str} {time_str}"
+                f"今日黃金報價：\n"
+                f"飾金賣出：{sell_price} 元/錢\n"
+                f"飾金買入：{buy_price} 元/錢\n"
+                f"條金參考：{bar_price} 元/錢"
             )
         else:
-            msg = "❗ 未找到今天的金價資料，請稍後再試或聯繫店家。"
+            msg = "系統出了一點問題，請聯繫店家。"
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
 
