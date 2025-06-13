@@ -33,20 +33,12 @@ def handle_message(event):
     text = event.message.text.strip()
 
     if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
-        today = date.today()
-
-        # 產生幾種可接受的日期格式（可能出現在 Google Sheet 中）
-        possible_dates = [
-            today.strftime("%Y/%#m/%#d"),  # e.g. 2025/6/13 (windows)
-            today.strftime("%Y/%m/%d"),    # e.g. 2025/06/13
-            today.strftime("%Y-%m-%d"),    # e.g. 2025-06-13
-        ]
-
+        today = datetime.now().strftime("%Y/%-m/%-d")  # mac/linux
+        alt_today = datetime.now().strftime("%Y/%#m/%#d")  # Windows
         records = sheet.get_all_records()
 
         matched = next(
-            (row for row in records
-             if str(row.get("日期")) in possible_dates),
+            (row for row in records if str(row.get("日期")).strip() in [today, alt_today]),
             None
         )
 
@@ -55,9 +47,9 @@ def handle_message(event):
             buy_price = matched.get("飾金買入", "N/A")
             bar_price = matched.get("條金", "N/A")
             msg = (
-                f"📅 今日金價報價：\\n"
-                f"🔸 飾金賣出：{sell_price} 元/錢\\n"
-                f"🔹 飾金買入：{buy_price} 元/錢\\n"
+                f"📅 今日金價報價：\n"
+                f"🔸 飾金賣出：{sell_price} 元/錢\n"
+                f"🔹 飾金買入：{buy_price} 元/錢\n"
                 f"🪙 條金參考：{bar_price} 元/錢"
             )
         else:
