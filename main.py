@@ -30,17 +30,31 @@ def webhook():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    if event.message.text in ["查詢金價"]:
-        user_id = event.source.user_id
-        today = str(int(datetime.now().strftime("%Y/%m/%d")))
+text = event.message.text.strip()
+
+    if text in ["查詢金價", "查詢黃金報價", "黃金報價"]:
+        # 取得今天日期，轉為純數字字串格式如 20250613
+        today = str(int(datetime.now().strftime("%Y%m%d")))
         records = sheet.get_all_records()
-        matched = next((row for row in records if str(row.get('日期')).replace("/", "").replace("-", "") == today), None)
+
+        # 比對時也轉換資料表中的日期格式（去除斜線與補零）
+        matched = next((
+            row for row in records
+            if str(row.get("日期")).replace("/", "").replace("-", "") == today
+        ), None)
 
         if matched:
-            price = matched['飾金賣出']
-            msg = f"📅 {today} 金玥銀樓金價報價：\n💰 黃金：{price} 元/錢"
+            sell_price = matched.get("飾金賣出")
+            buy_price = matched.get("飾金買入")
+            bar_price = matched.get("條金")
+            msg = (
+                f"📅 今日金價報價：\n"
+                f"🔸 飾金賣出：{sell_price} 元/錢\n"
+                f"🔹 飾金買入：{buy_price} 元/錢\n"
+                f"🪙 條金參考：{bar_price} 元/錢"
+            )
         else:
-            msg = f"❗ 未找到 {today} 的金價報價，請稍後再試或聯繫店家。"
+            msg = f"❗ 未找到今天的金價資料，請稍後再試或聯繫店家。"
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
 
