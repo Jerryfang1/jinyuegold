@@ -75,7 +75,7 @@ def reply_gold_price(reply_token):
                 f"鉑金賣出：{pt_sell} 元/錢\n"
                 f"鉑金買入：{pt_buy} 元/錢\n"
             )
-        else:
+    else:
             msg = "系統出了一點問題，請聯繫店家。"
 
         line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
