@@ -1,12 +1,13 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import TextSendMessage, MessageEvent, TextMessage, PostbackEvent
+from linebot.exceptions import InvalidSignatureError
+from datetime import datetime
 import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from linebot.exceptions import InvalidSignatureError
-from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -35,7 +36,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.strip()
-    if text in ["查詢今日金價"]:
+    if text == "查詢今日金價":
         reply_gold_price(event.reply_token)
 
 @handler.add(PostbackEvent)
@@ -45,15 +46,20 @@ def handle_postback(event):
         reply_gold_price(event.reply_token)
 
 def reply_gold_price(reply_token):
-        today = datetime.now().strftime("%Y/%m/%d")
-        alt_today = datetime.now().strftime("%Y-%m-%d")    
+    today = datetime.now().strftime("%Y/%m/%d")
+    alt_today = datetime.now().strftime("%Y-%m-%d")  # 因應不同日期格式
+
+    try:
         records = sheet.get_all_records()
+    except Exception as e:
+        error_msg = f"無法讀取報價表：{str(e)}"
+        line_bot_api.reply_message(reply_token, TextSendMessage(text=error_msg))
+        return
 
-        matched = next(
-            (row for row in records if str(row.get("日期")).strip() in [today, alt_today]),
-            None
-        )
-
+    matched = next(
+        (row for row in records if str(row.get("日期", "")).strip() in [today, alt_today]),
+        None
+    )
         if matched:
             gold_sell = matched.get("黃金賣出", "N/A")
             gold_buy = matched.get("黃金買入", "N/A")
@@ -72,7 +78,7 @@ def reply_gold_price(reply_token):
         else:
             msg = "系統出了一點問題，請聯繫店家。"
 
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
+        line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
