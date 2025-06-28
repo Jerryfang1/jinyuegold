@@ -68,16 +68,17 @@ def reply_gold_price(reply_token):
             date_str = str(matched.get("日期", ""))
             time_str = str(matched.get("時間", ""))
             msg = (
-                f"報價時間：{date_str} {time_str}"
-                f"今日黃金報價：\n"
+                f"報價時間：{date_str} {time_str}\n"
+                f"黃金報價：\n"
                 f"黃金賣出：{gold_sell} 元/錢\n"
                 f"黃金買入：{gold_buy} 元/錢\n"
+                f"鉑金報價：\n"
                 f"鉑金賣出：{pt_sell} 元/錢\n"
                 f"鉑金買入：{pt_buy} 元/錢\n"
             )
     else:
         all_dates = [str(row.get("日期", "")).strip() for row in records]
-        msg = "⚠️ 找不到今日報價資料。\n目前日期清單：\n" + "\n".join(all_dates)
+        msg = "⚠️系統發生一些錯誤。\n目前日期清單：\n" + "\n".join(all_dates)
     line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
 
 if __name__ == "__main__":
