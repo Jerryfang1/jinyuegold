@@ -60,7 +60,7 @@ def reply_gold_price(reply_token):
         (row for row in records if str(row.get("日期", "")).strip() in [today, alt_today]),
         None
     )
-        if matched:
+    if matched:
             gold_sell = matched.get("黃金賣出", "N/A")
             gold_buy = matched.get("黃金買入", "N/A")
             pt_sell = matched.get("鉑金賣出", "N/A")
