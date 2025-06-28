@@ -46,6 +46,7 @@ def handle_postback(event):
 
 def reply_gold_price(reply_token):
         today = datetime.now().strftime("%Y/%m/%d")
+        alt_today = datetime.now().strftime("%Y-%m-%d")    
         records = sheet.get_all_records()
 
         matched = next(
