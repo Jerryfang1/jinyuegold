@@ -76,7 +76,8 @@ def reply_gold_price(reply_token):
                 f"鉑金買入：{pt_buy} 元/錢\n"
             )
     else:
-            msg = "系統出了一點問題，請聯繫店家。"
+        all_dates = [str(row.get("日期", "")).strip() for row in records]
+        msg = "⚠️ 找不到今日報價資料。\n目前日期清單：\n" + "\n".join(all_dates)
     line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
 
 if __name__ == "__main__":
