@@ -6,7 +6,7 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from linebot.exceptions import InvalidSignatureError
-from datetime import datetime, date
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -45,8 +45,7 @@ def handle_postback(event):
         reply_gold_price(event.reply_token)
 
 def reply_gold_price(reply_token):
-        today = datetime.now().strftime("%Y/%-m/%-d")  # mac/linux
-        alt_today = datetime.now().strftime("%Y/%#m/%#d")  # Windows
+        today = datetime.now().strftime("%Y/%m/%d")
         records = sheet.get_all_records()
 
         matched = next(
@@ -59,7 +58,7 @@ def reply_gold_price(reply_token):
             gold_buy = matched.get("黃金買入", "N/A")
             pt_sell = matched.get("鉑金賣出", "N/A")
             pt_buy = matched.get("鉑金買入", "N/A")
-            data_str = str(matched.get("日期", ""))
+            date_str = str(matched.get("日期", ""))
             time_str = str(matched.get("時間", ""))
             msg = (
                 f"報價時間：{date_str} {time_str}"
