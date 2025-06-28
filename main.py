@@ -69,10 +69,8 @@ def reply_gold_price(reply_token):
             time_str = str(matched.get("時間", ""))
             msg = (
                 f"報價時間：{date_str} {time_str}\n"
-                f"黃金報價：\n"
                 f"黃金賣出：{gold_sell} 元/錢\n"
                 f"黃金買入：{gold_buy} 元/錢\n"
-                f"鉑金報價：\n"
                 f"鉑金賣出：{pt_sell} 元/錢\n"
                 f"鉑金買入：{pt_buy} 元/錢\n"
             )
