@@ -77,8 +77,7 @@ def reply_gold_price(reply_token):
             )
     else:
             msg = "系統出了一點問題，請聯繫店家。"
-
-        line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
+    line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
