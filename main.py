@@ -1,6 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import TextSendMessage, MessageEvent, TextMessage, PostbackEvent
+from linebot.models import TextSendMessage, MessageEvent, TextMessage, PostbackEvent, FlexSendMessage
 from linebot.exceptions import InvalidSignatureError
 from datetime import datetime
 import os
@@ -52,7 +52,7 @@ def reply_gold_price(reply_token):
     try:
         records = sheet.get_all_records()
     except Exception as e:
-        error_msg = f"無法讀取報價表：{str(e)}"
+        error_msg = f"無法讀取報價資料：{str(e)}"
         line_bot_api.reply_message(reply_token, TextSendMessage(text=error_msg))
         return
 
@@ -60,24 +60,111 @@ def reply_gold_price(reply_token):
         (row for row in records if str(row.get("日期", "")).strip() in [today, alt_today]),
         None
     )
-    if matched:
-            gold_sell = matched.get("黃金賣出", "N/A")
-            gold_buy = matched.get("黃金買入", "N/A")
-            pt_sell = matched.get("鉑金賣出", "N/A")
-            pt_buy = matched.get("鉑金買入", "N/A")
-            date_str = str(matched.get("日期", ""))
-            time_str = str(matched.get("時間", ""))
-            msg = (
-                f"報價時間：{date_str} {time_str}\n"
-                f"黃金賣出：{gold_sell} 元/錢\n"
-                f"黃金買入：{gold_buy} 元/錢\n"
-                f"鉑金賣出：{pt_sell} 元/錢\n"
-                f"鉑金買入：{pt_buy} 元/錢\n"
-            )
-    else:
-        all_dates = [str(row.get("日期", "")).strip() for row in records]
-        msg = "⚠️系統發生一些錯誤。\n目前日期清單：\n" + "\n".join(all_dates)
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=msg))
+    
+    if not matched:
+        line_bot_api.reply_message(
+            reply_token,
+            TextSendMessage(text=f"⚠️ 找不到今日（{today}）報價資料，請聯繫店家。")
+        )
+        return
+
+    # 取值
+    gold_sell = matched.get("黃金賣出", "N/A")
+    gold_buy = matched.get("黃金買入", "N/A")
+    pt_sell = matched.get("鉑金賣出", "N/A")
+    pt_buy = matched.get("鉑金買入", "N/A")
+    date_str = matched.get("日期", "")
+    time_str = matched.get("時間", "")
+
+    # 建立 Flex Message 卡片
+    msg = FlexSendMessage(
+        alt_text="今日金屬報價",
+        contents={
+            "type": "bubble",
+            "size": "mega",
+            "header": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": f"🗓️ {date_str} {time_str}",
+                        "weight": "bold",
+                        "color": "#B08B4F",
+                        "size": "sm"
+                    },
+                    {
+                        "type": "text",
+                        "text": "金屬報價",
+                        "weight": "bold",
+                        "size": "xl",
+                        "color": "#1C1C1C",
+                        "margin": "md"
+                    }
+                ]
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "md",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {"type": "text", "text": "👑 黃金", "weight": "bold", "flex": 1}
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {"type": "text", "text": "🟡 賣出", "flex": 2},
+                            {"type": "text", "text": f"{gold_sell} 元／錢", "flex": 3, "align": "end"}
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {"type": "text", "text": "⚪ 買入", "flex": 2},
+                            {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "align": "end"}
+                        ]
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {"type": "text", "text": "💎 鉑金", "weight": "bold", "flex": 1}
+                        ],
+                        "margin": "md"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {"type": "text", "text": "🟣 賣出", "flex": 2},
+                            {"type": "text", "text": f"{pt_sell} 元／錢", "flex": 3, "align": "end"}
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {"type": "text", "text": "⚪ 買入", "flex": 2},
+                            {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "align": "end"}
+                        ]
+                    }
+                ]
+            }
+        }
+    )
+
+    line_bot_api.reply_message(reply_token, msg)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
