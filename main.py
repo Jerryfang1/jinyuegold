@@ -19,7 +19,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_json, scope
 client = gspread.authorize(creds)
 
 # 打開 Sheet
-sheet = client.open("金玥報價").worksheet("金價")
+sheet = client.open("金玥報價").worksheet("報價")
 
 @app.route("/callback", methods=["POST"])
 def callback():
@@ -34,7 +34,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text.strip()
-    if text in ["金價", "查詢黃金報價", "黃金報價"]:
+    if text in ["查詢今日金價"]:
         reply_gold_price(event.reply_token)
 
 @handler.add(PostbackEvent)
@@ -54,17 +54,19 @@ def reply_gold_price(reply_token):
         )
 
         if matched:
-            sell_price = matched.get("飾金賣出", "N/A")
-            buy_price = matched.get("飾金買入", "N/A")
-            bar_price = matched.get("條金", "N/A")
+            gold_sell = matched.get("黃金賣出", "N/A")
+            gold_buy = matched.get("黃金買入", "N/A")
+            pt_sell = matched.get("鉑金賣出", "N/A")
+            pt_buy = matched.get("鉑金買入", "N/A")
             data_str = str(matched.get("日期", ""))
             time_str = str(matched.get("時間", ""))
             msg = (
                 f"報價時間：{date_str} {time_str}"
                 f"今日黃金報價：\n"
-                f"飾金賣出：{sell_price} 元/錢\n"
-                f"飾金買入：{buy_price} 元/錢\n"
-                f"條金參考：{bar_price} 元/錢"
+                f"黃金賣出：{gold_sell} 元/錢\n"
+                f"黃金買入：{gold_buy} 元/錢\n"
+                f"鉑金賣出：{pt_sell} 元/錢\n"
+                f"鉑金買入：{pt_buy} 元/錢\n"
             )
         else:
             msg = "系統出了一點問題，請聯繫店家。"
