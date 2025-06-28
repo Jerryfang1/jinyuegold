@@ -5,6 +5,7 @@ import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from linebot.exceptions import InvalidSignatureError
 from datetime import datetime, date
 
 app = Flask(__name__)
