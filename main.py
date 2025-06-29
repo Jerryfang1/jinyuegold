@@ -98,6 +98,7 @@ def reply_gold_price(reply_token):
                         "text": f"🗓️ {date_str} {time_str}",
                         "weight": "bold",
                         "color": "#B08B4F",
+                        "margin": "md",
                         "size": "lg"
                     }
                 ]
