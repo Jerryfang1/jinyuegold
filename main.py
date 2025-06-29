@@ -133,7 +133,8 @@ def reply_gold_price(reply_token):
                     },
                     {
                         "type": "separator",
-                        "margin": "md"
+                        "margin": "lg"
+                        "color": "#9E8254FF"
                     },
                     {
                         "type": "box",
