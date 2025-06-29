@@ -88,18 +88,17 @@ def reply_gold_price(reply_token):
                 "contents": [
                     {
                         "type": "text",
-                        "text": f"🗓️ {date_str} {time_str}",
+                        "text": "報價時間",
                         "weight": "bold",
-                        "color": "#B08B4F",
-                        "size": "sm"
+                        "color": "#1C1C1C",
+                        "size": "lg"
                     },
                     {
                         "type": "text",
-                        "text": "金屬報價",
+                        "text": f"🗓️ {date_str} {time_str}",
                         "weight": "bold",
-                        "size": "xl",
-                        "color": "#1C1C1C",
-                        "margin": "md"
+                        "color": "#B08B4F",
+                        "size": "lg"
                     }
                 ]
             },
