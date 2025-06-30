@@ -119,7 +119,7 @@ def reply_gold_price(reply_token):
                         "spacing": "lg",
                         "paddingAll": "15px"
                         "contents": [
-                            {"type": "text", "text": "🟡 黃金", "size": "md", "color": "#1c1c1c", "weight": "bold"},
+                            {"type": "text", "text": "🟡 黃金", "size": "md", "color": "#1c1c1c", "weight": "bold"}
                     {
                         "type": "box",
                         "layout": "horizontal",
