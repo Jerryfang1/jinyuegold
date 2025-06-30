@@ -116,6 +116,8 @@ def reply_gold_price(reply_token):
                         "layout": "vertical",
                         "backgroundColor": "#ffffe0",
                         "cornerRadius": "xxl",
+                        "spacing": "lg",
+                        "paddingAll": "15px"
                         "contents": [
                             {"type": "text", "text": "🟡 黃金", "size": "md", "color": "#1c1c1c", "weight": "bold"},
                     {
@@ -134,11 +136,9 @@ def reply_gold_price(reply_token):
                             {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
                         ]
                     }
-                ],
-                "spacing": "lg",
-                "paddingAll": "15px"
-                   },
-                   {
+                ]
+                    },
+                    {
                         "type": "box",
                         "layout": "vertical",
                         "backgroundColor": "#3f3f3f",
