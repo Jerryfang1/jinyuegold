@@ -167,7 +167,7 @@ def reply_gold_price(reply_token):
             }
                     "margin": "none",
                     "offsetTop": "-20px"       
-        }
+                ]
     )
 line_bot_api.reply_message(reply_token, msg)
 
