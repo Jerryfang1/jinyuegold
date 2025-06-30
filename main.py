@@ -144,13 +144,14 @@ def reply_gold_price(reply_token):
                         "backgroundColor": "#3f3f3f",
                         "cornerRadius": "xxl",
                         "paddingAll": "15px",
+                        "spacing": "lg",
                         "contents": [
                             {"type": "text", "text": "⚪ 鉑金", "weight": "bold", "size": "md", "color": "#ffffff"},
                     {
                         "type": "box",
                         "layout": "horizontal",
                         "contents": [
-                            {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF",},
+                            {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF"},
                             {"type": "text", "text": f"{pt_sell} 元／錢", "color": "#FFFFFF", "flex": 3, "align": "end"}
                         ]
                     },
@@ -162,13 +163,14 @@ def reply_gold_price(reply_token):
                             {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "color": "#FFFFFF", "align": "end"}
                         ]
                     }
-                ],
-                       "spacing": "lg"
-            }
-                    "margin": "none",
-                    "offsetTop": "-20px"       
                 ]
                     }
+            ],
+                    "margin": "none",
+                    "offsetTop": "-20px"       
+        }
+                    }
+    )
 line_bot_api.reply_message(reply_token, msg)
 
 if __name__ == "__main__":
