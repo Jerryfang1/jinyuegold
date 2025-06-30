@@ -116,27 +116,55 @@ def reply_gold_price(reply_token):
                         "layout": "vertical",
                         "backgroundColor": "#ffffe0",
                         "cornerRadius": "xxl",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "🟡 黃金",
+                                "size": "md",
+                                "color": "#1c1c1c",
+                                "weight": "bold"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "🔸 賣出",
+                                        "color": "#1c1c1c",
+                                        "flex": 2
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{gold_sell} 元／錢",
+                                        "flex": 3,
+                                        "color": "#1c1c1c",
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "🔹 買入",
+                                        "color": "#1c1c1c",
+                                        "flex": 2
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{gold_buy} 元／錢",
+                                        "flex": 3,
+                                        "color": "#1c1c1c",
+                                        "align": "end"
+                                    }
+                                ]
+                            }
+                        ],
                         "spacing": "lg",
                         "paddingAll": "15px"
-                        "contents": [
-                            {"type": "text", "text": "🟡 黃金", "size": "md", "color": "#1c1c1c", "weight": "bold"}
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                            {"type": "text", "text": "🔸 賣出", "color": "#1c1c1c", "flex": 2},
-                            {"type": "text", "text": f"{gold_sell} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
-                        ]
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                            {"type": "text", "text": "🔹 買入", "color": "#1c1c1c", "flex": 2},
-                            {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
-                        ]
-                    }
-                ]
                     },
                     {
                         "type": "box",
@@ -144,32 +172,60 @@ def reply_gold_price(reply_token):
                         "backgroundColor": "#3f3f3f",
                         "cornerRadius": "xxl",
                         "paddingAll": "15px",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "⚪ 鉑金",
+                                "weight": "bold",
+                                "size": "md",
+                                "color": "#ffffff"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "🔸 賣出",
+                                        "flex": 2,
+                                        "color": "#FFFFFF"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{pt_sell} 元／錢",
+                                        "color": "#FFFFFF",
+                                        "flex": 3,
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "🔹 買入",
+                                        "flex": 2,
+                                        "color": "#FFFFFF"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{pt_buy} 元／錢",
+                                        "flex": 3,
+                                        "color": "#FFFFFF",
+                                        "align": "end"
+                                    }
+                                ]
+                            }
+                        ],
                         "spacing": "lg",
-                        "contents": [
-                            {"type": "text", "text": "⚪ 鉑金", "weight": "bold", "size": "md", "color": "#ffffff"},
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                            {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF"},
-                            {"type": "text", "text": f"{pt_sell} 元／錢", "color": "#FFFFFF", "flex": 3, "align": "end"}
-                        ]
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                            {"type": "text", "text": "🔹 買入", "flex": 2, "color": "#FFFFFF"},
-                            {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "color": "#FFFFFF", "align": "end"}
-                        ]
                     }
-                ]
-                    }
-            ],
-                    "margin": "none",
-                    "offsetTop": "-20px"       
+                ],
+                "margin": "none",
+                "offsetTop": "-20px"
+            }
         }
-                    }
     )
 line_bot_api.reply_message(reply_token, msg)
 
