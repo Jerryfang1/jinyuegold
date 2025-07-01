@@ -15,11 +15,17 @@ from linebot.v3.messaging import (
     ReplyMessageRequest,
     TextMessage
 )
-from linebot.v3.webhooks import MessageEvent, TextMessageContent as V3TextMessageContent, PostbackEvent
+from linebot.v3.webhooks import (
+    MessageEvent,
+    TextMessageContent as V3TextMessageContent,
+    PostbackEvent
+)
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+configuration = Configuration(access_token=os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+api_client = ApiClient(configuration)
+line_bot_api = MessagingApi(api_client)
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # Google Sheets 授權設定
@@ -33,25 +39,27 @@ sheet = client.open("金玥報價").worksheet("報價")
 
 @app.route("/callback", methods=["POST"])
 def callback():
-    signature = request.headers["X-Line-Signature"]
+    signature = request.headers.get("X-Line-Signature", "")
     body = request.get_data(as_text=True)
     try:
         handler.handle(body, signature)
-    except InvalidSignatureError:
+    except Exception as e:
+        print(f"Webhook Error: {e}")
         abort(400)
     return "OK"
     
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent)
 def handle_message(event):
-    text = event.message.text.strip()
-    if text == "查詢今日金價":
-        reply_gold_price(event.reply_token)
+    if isinstance(event.message, V3TextMessageContent):
+        text = event.message.text.strip()
+        if text == "查詢今日金價":
+            reply_gold_price(event.reply_token)
 
 @handler.add(PostbackEvent)
 def handle_postback(event):
-    data = event.postback.data
-    if data == "action=gold":
+    if event.postback.data == "action=gold":
         reply_gold_price(event.reply_token)
+
 
 def reply_gold_price(reply_token):
     today = datetime.now().strftime("%Y/%m/%d")
@@ -61,9 +69,13 @@ def reply_gold_price(reply_token):
         records = sheet.get_all_records()
     except Exception as e:
         error_msg = f"無法讀取報價資料：{str(e)}"
-        line_bot_api.reply_message(reply_token, TextSendMessage(text=error_msg))
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=reply_token,
+                messages=[TextMessage(text=error_msg)]
+            )
+        )
         return
-
     matched = next(
         (row for row in records if str(row.get("日期", "")).strip() in [today, alt_today]),
         None
@@ -71,8 +83,10 @@ def reply_gold_price(reply_token):
     
     if not matched:
         line_bot_api.reply_message(
-            reply_token,
-            TextSendMessage(text=f"⚠️ 找不到今日（{today}）報價資料，請聯繫店家。")
+            ReplyMessageRequest(
+                reply_token=reply_token,
+                messages=[TextMessage(text=f"⚠️ 找不到今日（{today}）報價資料，請聯繫店家。")]
+            )
         )
         return
 
@@ -85,156 +99,117 @@ def reply_gold_price(reply_token):
     time_str = matched.get("時間", "")
 
     # 建立 Flex Message 卡片
-    msg = FlexSendMessage(
-        alt_text="今日金屬報價",
-        contents={
-            "type": "bubble",
-            "size": "mega",
-            "header": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "text",
-                        "text": "報價時間",
-                        "size": "xl",
-                        "color": "#1C1c1c",
-                        "weight": "bold",
-                        "align": "center",
-                        "margin": "md"
-                    },
-                    {
-                        "type": "text",
-                        "text": f"🗓️ {date_str} {time_str}",
-                        "weight": "bold",
-                        "color": "#B08B4F",
-                        "align": "center",
-                        "margin": "none",
-                        "size": "md"
-                    }
-                ]
-            },
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "spacing": "lg",
-                "contents": [
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "backgroundColor": "#ffffe0",
-                        "cornerRadius": "xxl",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "🟡 黃金",
-                                "size": "md",
-                                "color": "#1c1c1c",
-                                "weight": "bold"
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "🔸 賣出",
-                                        "color": "#1c1c1c",
-                                        "flex": 2
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{gold_sell} 元／錢",
-                                        "flex": 3,
-                                        "color": "#1c1c1c",
-                                        "align": "end"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "🔹 買入",
-                                        "color": "#1c1c1c",
-                                        "flex": 2
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{gold_buy} 元／錢",
-                                        "flex": 3,
-                                        "color": "#1c1c1c",
-                                        "align": "end"
-                                    }
-                                ]
-                            }
-                        ],
-                        "spacing": "lg",
-                        "paddingAll": "15px"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "backgroundColor": "#3f3f3f",
-                        "cornerRadius": "xxl",
-                        "paddingAll": "15px",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "⚪ 鉑金",
-                                "weight": "bold",
-                                "size": "md",
-                                "color": "#ffffff"
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "🔸 賣出",
-                                        "flex": 2,
-                                        "color": "#FFFFFF"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{pt_sell} 元／錢",
-                                        "color": "#FFFFFF",
-                                        "flex": 3,
-                                        "align": "end"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "🔹 買入",
-                                        "flex": 2,
-                                        "color": "#FFFFFF"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{pt_buy} 元／錢",
-                                        "flex": 3,
-                                        "color": "#FFFFFF",
-                                        "align": "end"
-                                    }
-                                ]
-                            }
-                        ],
-                        "spacing": "lg",
-                    }
-                ],
-                "margin": "none",
-                "offsetTop": "-20px"
-            }
+    flex_content = {
+        "type": "bubble",
+        "size": "mega",
+        "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {
+                    "type": "text",
+                    "text": "報價時間",
+                    "size": "xl",
+                    "color": "#1C1c1c",
+                    "weight": "bold",
+                    "align": "center",
+                    "margin": "md"
+                },
+                {
+                    "type": "text",
+                    "text": f"🗓️ {date_str} {time_str}",
+                    "weight": "bold",
+                    "color": "#B08B4F",
+                    "align": "center",
+                    "margin": "none",
+                    "size": "md"
+                }
+            ]
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "lg",
+            "contents": [
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "backgroundColor": "#ffffe0",
+                    "cornerRadius": "xxl",
+                    "spacing": "lg",
+                    "paddingAll": "15px",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "🟡 黃金",
+                            "size": "md",
+                            "color": "#1c1c1c",
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {"type": "text", "text": "🔸 賣出", "color": "#1c1c1c", "flex": 2},
+                                {"type": "text", "text": f"{gold_sell} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {"type": "text", "text": "🔹 買入", "color": "#1c1c1c", "flex": 2},
+                                {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "backgroundColor": "#3f3f3f",
+                    "cornerRadius": "xxl",
+                    "paddingAll": "15px",
+                    "spacing": "lg",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "⚪ 鉑金",
+                            "weight": "bold",
+                            "size": "md",
+                            "color": "#ffffff"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF"},
+                                {"type": "text", "text": f"{pt_sell} 元／錢", "color": "#FFFFFF", "flex": 3, "align": "end"}
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {"type": "text", "text": "🔹 買入", "flex": 2, "color": "#FFFFFF"},
+                                {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "color": "#FFFFFF", "align": "end"}
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "margin": "none",
+            "offsetTop": "-20px"
         }
+    }
+
+    line_bot_api.reply_message(
+        ReplyMessageRequest(
+            reply_token=reply_token,
+            messages=[FlexMessage(alt_text="今日金屬報價", contents=flex_content)]
+        )
     )
+
 line_bot_api.reply_message(reply_token, msg)
 
 if __name__ == "__main__":
