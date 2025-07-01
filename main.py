@@ -12,7 +12,6 @@ from linebot.v3.messaging import (
     ApiClient,
     MessagingApi,
     FlexMessage,
-    TextMessageContent,
     ReplyMessageRequest,
     TextMessage
 )
