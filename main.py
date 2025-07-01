@@ -210,8 +210,6 @@ def reply_gold_price(reply_token):
         )
     )
 
-line_bot_api.reply_message(reply_token, msg)
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
