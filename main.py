@@ -1,13 +1,22 @@
-from flask import Flask, request
-from linebot import LineBotApi, WebhookHandler
-from linebot.models import TextSendMessage, MessageEvent, TextMessage, PostbackEvent, FlexSendMessage
-from linebot.exceptions import InvalidSignatureError
+from flask import Flask, request, abort
 from datetime import datetime
 import os
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+# LINE SDK v3
+from linebot.v3.webhook import WebhookHandler
+from linebot.v3.messaging import (
+    Configuration,
+    ApiClient,
+    MessagingApi,
+    FlexMessage,
+    TextMessageContent,
+    ReplyMessageRequest,
+    TextMessage
+)
+from linebot.v3.webhooks import MessageEvent, TextMessageContent as V3TextMessageContent, PostbackEvent
 
 app = Flask(__name__)
 
