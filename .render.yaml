@@ -3,7 +3,7 @@ services:
     name: gold
     env: python
     plan: free
-    buildCommand: ""
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python main.py"
     envVars:
       - key: LINE_CHANNEL_ACCESS_TOKEN
