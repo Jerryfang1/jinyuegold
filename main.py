@@ -41,6 +41,8 @@ sheet = client.open("金玥報價").worksheet("報價")
 def callback():
     signature = request.headers.get("X-Line-Signature", "")
     body = request.get_data(as_text=True)
+    print("Received body:", body)
+    print("Received signature:", signature)
     try:
         handler.handle(body, signature)
     except Exception as e:
