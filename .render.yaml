@@ -7,6 +7,6 @@ services:
     startCommand: "python main.py"
     envVars:
       - key: LINE_CHANNEL_ACCESS_TOKEN
-        value: your_line_channel_access_token
+        sync: true
       - key: LINE_CHANNEL_SECRET
-        value: your_line_channel_secret
+        sync: true
