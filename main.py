@@ -7,6 +7,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 # LINE SDK v3
 from linebot.v3.webhook import WebhookHandler
+from linebot.v3.messaging.models import FlexContainer
 from linebot.v3.messaging import (
     Configuration,
     ApiClient,
@@ -210,7 +211,12 @@ def reply_gold_price(reply_token):
     line_bot_api.reply_message(
         ReplyMessageRequest(
             reply_token=reply_token,
-            messages=[FlexMessage(alt_text="今日金屬報價", contents=flex_content)]
+            messages=[
+                FlexMessage(
+                    alt_text="今日金屬報價",
+                    contents=FlexContainer.from_dict(flex_content)
+                )
+            ]
         )
     )
 
