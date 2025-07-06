@@ -1,5 +1,4 @@
 flask==2.2.5
 line-bot-sdk==3.4.0
-requests
 gspread==5.12.0
 oauth2client==4.1.3
