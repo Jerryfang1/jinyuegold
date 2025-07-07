@@ -29,6 +29,9 @@ api_client = ApiClient(configuration)
 line_bot_api = MessagingApi(api_client)
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
+print("LINE_CHANNEL_ACCESS_TOKEN:", os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+print("LINE_CHANNEL_SECRET:", os.getenv("LINE_CHANNEL_SECRET"))
+
 # Google Sheets 授權設定
 credentials_json = json.loads(os.environ["GOOGLE_APPLICATION_CREDENTIALS_JSON"])
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
