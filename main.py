@@ -24,13 +24,14 @@ from linebot.v3.webhooks import (
 
 app = Flask(__name__)
 
+
+token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+if not token:
+    raise Exception("❌ LINE_CHANNEL_ACCESS_TOKEN 未設定！請到 Railway 設定環境變數")
 configuration = Configuration(access_token=os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 api_client = ApiClient(configuration)
 line_bot_api = MessagingApi(api_client)
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
-
-import os
-print("LINE_CHANNEL_ACCESS_TOKEN:", os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
 # Google Sheets 授權設定
 credentials_json = json.loads(os.environ["GOOGLE_APPLICATION_CREDENTIALS_JSON"])
