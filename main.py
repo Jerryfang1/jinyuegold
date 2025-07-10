@@ -25,9 +25,10 @@ from linebot.v3.webhooks import (
 app = Flask(__name__)
 
 
-token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
-if not token:
-    raise Exception("❌ LINE_CHANNEL_ACCESS_TOKEN 未設定！請到 Railway 設定環境變數")
+print("Token is:", os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
+if os.getenv("LINE_CHANNEL_ACCESS_TOKEN") is None:
+    raise Exception("❌ 沒有設定 LINE_CHANNEL_ACCESS_TOKEN！請回 Railway 補上環境變數")
+
 configuration = Configuration(access_token=os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 api_client = ApiClient(configuration)
 line_bot_api = MessagingApi(api_client)
