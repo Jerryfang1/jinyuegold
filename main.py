@@ -106,6 +106,7 @@ def reply_gold_price(reply_token):
     pt_sell = matched.get("鉑金賣出", "N/A")
     pt_buy = matched.get("鉑金買入", "N/A")
     date_str = matched.get("日期", "")
+    week_str = matched.get("星期", "")
     time_str = matched.get("時間", "")
 
     # 建立 Flex Message 卡片
@@ -127,7 +128,7 @@ def reply_gold_price(reply_token):
                 },
                 {
                     "type": "text",
-                    "text": f"🗓️ {date_str} {time_str}",
+                    "text": f"🗓️ {date_str} {week_str} {time_str}",
                     "weight": "bold",
                     "color": "#B08B4F",
                     "align": "center",
