@@ -57,7 +57,12 @@ def callback():
         print(f"Webhook Error: {e}")
         abort(400)
     return "OK"
-    
+
+print(f"[DEBUG] 查詢今日金價，今日日期：{datetime.now().strftime('%Y/%m/%d')}")
+print("[DEBUG] matched 資料：", matched)
+print("[DEBUG] FlexMessage 預覽：", json.dumps(flex_content, ensure_ascii=False, indent=2))
+
+
 @handler.add(MessageEvent)
 def handle_message(event):
     if isinstance(event.message, V3TextMessageContent):
