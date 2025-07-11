@@ -103,8 +103,8 @@ def reply_gold_price(reply_token):
         )
     print("[DEBUG] matched 資料：", matched)
     
-        if not matched:
-            line_bot_api.reply_message(
+    if not matched:
+        line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
                 messages=[TextMessage(text=f"⚠️ 找不到今日（{today_str}）報價資料，請聯繫店家。")]
