@@ -247,6 +247,9 @@ def reply_gold_price(reply_token):
             "header": {
                 "backgroundColor": "#f5f0e8"
             },
+            "body": {
+                "backgroundColor": "#f5f0e8"
+            }
             "footer": {
                 "backgroundColor": "#f5f0e8"
             }
