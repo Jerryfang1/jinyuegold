@@ -209,10 +209,38 @@ def reply_gold_price(reply_token):
                     ]
                 }
             ],
-            "margin": "none",
-            "offsetTop": "-20px"
+            "paddingAll": "15px",
+            "cornerRadius": "xxl",
+            "spacing": "lg"
+        },
+        "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {
+                    "type": "text",
+                    "text": "金價波動頻繁，歡迎現場洽詢",
+                    "align": "center"
+                },
+                {
+                    "type": "text",
+                    "text": "實際成交價格依店內報價為準",
+                    "align": "center",
+                    "margin": "md"
+                }
+            ],
+            "paddingBottom": "xl"
+        },
+        "styles": {
+            "header": {
+                "backgroundColor": "#f5f0e8"
+            },
+            "footer": {
+                "backgroundColor": "#f5f0e8"
+            }
         }
     }
+            
 
     line_bot_api.reply_message(
         ReplyMessageRequest(
