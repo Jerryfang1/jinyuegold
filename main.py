@@ -72,7 +72,8 @@ def handle_postback(event):
 
 
 def reply_gold_price(reply_token):
-    today = datetime.now().strftime("%Y/%m/%d")
+    today = datetime.now()
+    today_str = today.strftime("%Y/%m/%d")
 
     try:
         records = sheet.get_all_records()
@@ -86,21 +87,21 @@ def reply_gold_price(reply_token):
         )
         return
     matched = next(
-        (row for row in records if str(row.get("日期", "")).strip() == today),
+        (row for row in records if str(row.get("日期", "")).strip() == today_str),
         None
     )
     
     if not matched:
-        yesterday = (today - timedelta(days=1)).strftime("%Y/%m/%d")
+        yesterday_str = (today - timedelta(days=1)).strftime("%Y/%m/%d")
         matched = next(
-            (row for row in records if str(row.get("日期", "")).strip() == yesterday),
+            (row for row in records if str(row.get("日期", "")).strip() == yesterday_str),
             None
         )
-        if not mathed:
+        if not matched:
             line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
-                messages=[TextMessage(text=f"⚠️ 找不到今日（{today}）報價資料，請聯繫店家。")]
+                messages=[TextMessage(text=f"⚠️ 找不到今日（{today_str}）報價資料，請聯繫店家。")]
             )
         )
         return
