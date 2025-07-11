@@ -73,7 +73,6 @@ def handle_postback(event):
 
 def reply_gold_price(reply_token):
     today = datetime.now().strftime("%Y/%m/%d")
-    alt_today = datetime.now().strftime("%Y-%m-%d")  # 因應不同日期格式
 
     try:
         records = sheet.get_all_records()
@@ -87,12 +86,18 @@ def reply_gold_price(reply_token):
         )
         return
     matched = next(
-        (row for row in records if str(row.get("日期", "")).strip() in [today, alt_today]),
+        (row for row in records if str(row.get("日期", "")).strip() == today),
         None
     )
     
     if not matched:
-        line_bot_api.reply_message(
+        yesterday = (today - timedelta(days=1)).strftime("%Y/%m/%d")
+        matched = next(
+            (row for row in records if str(row.get("日期", "")).strip() == yesterday),
+            None
+        )
+        if not mathed:
+            line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
                 messages=[TextMessage(text=f"⚠️ 找不到今日（{today}）報價資料，請聯繫店家。")]
@@ -247,7 +252,7 @@ def reply_gold_price(reply_token):
             reply_token=reply_token,
             messages=[
                 FlexMessage(
-                    alt_text="今日金屬報價",
+                    alt_text="查詢今日金價",
                     contents=FlexContainer.from_dict(flex_content)
                 )
             ]
