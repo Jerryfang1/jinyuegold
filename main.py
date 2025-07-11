@@ -58,10 +58,6 @@ def callback():
         abort(400)
     return "OK"
 
-print(f"[DEBUG] 查詢今日金價，今日日期：{datetime.now().strftime('%Y/%m/%d')}")
-print("[DEBUG] matched 資料：", matched)
-print("[DEBUG] FlexMessage 預覽：", json.dumps(flex_content, ensure_ascii=False, indent=2))
-
 
 @handler.add(MessageEvent)
 def handle_message(event):
@@ -79,11 +75,13 @@ def handle_postback(event):
 def reply_gold_price(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
+    print(f"[DEBUG] 查詢今日金價，今日日期：{today_str}")
 
     try:
         records = sheet.get_all_records()
     except Exception as e:
         error_msg = f"無法讀取報價資料：{str(e)}"
+        print("[ERROR] Google Sheet 讀取錯誤：", error_msg)
         line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
@@ -97,11 +95,14 @@ def reply_gold_price(reply_token):
     )
     
     if not matched:
+        print("[DEBUG] 找不到今日報價，嘗試找昨日...")
         yesterday_str = (today - timedelta(days=1)).strftime("%Y/%m/%d")
         matched = next(
             (row for row in records if str(row.get("日期", "")).strip() == yesterday_str),
             None
         )
+    print("[DEBUG] matched 資料：", matched)
+    
         if not matched:
             line_bot_api.reply_message(
             ReplyMessageRequest(
