@@ -173,16 +173,16 @@ def reply_gold_price(reply_token):
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                                {"type": "text", "text": "🔸 賣出", "color": "#1c1c1c", "flex": 2},
-                                {"type": "text", "text": f"{gold_sell} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
+                                {"type": "text", "text": "🔸 賣出", "color": "#1c1c1c", "flex": 2, "gravity": "center"},
+                                {"type": "text", "text": f"{gold_sell} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end", "gravity": "center", "size": "xl"}
                             ]
                         },
                         {
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                                {"type": "text", "text": "🔹 買入", "color": "#1c1c1c", "flex": 2},
-                                {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end"}
+                                {"type": "text", "text": "🔹 買入", "color": "#1c1c1c", "flex": 2, "gravity": "center"},
+                                {"type": "text", "text": f"{gold_buy} 元／錢", "flex": 3, "color": "#1c1c1c", "align": "end",  "gravity": "center", "size": "xl"}
                             ]
                         }
                     ]
@@ -206,16 +206,16 @@ def reply_gold_price(reply_token):
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                                {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF"},
-                                {"type": "text", "text": f"{pt_sell} 元／錢", "color": "#FFFFFF", "flex": 3, "align": "end"}
+                                {"type": "text", "text": "🔸 賣出", "flex": 2, "color": "#FFFFFF", "gravity": "center"},
+                                {"type": "text", "text": f"{pt_sell} 元／錢", "color": "#FFFFFF", "flex": 3, "align": "end", "gravity": "center", "size": "xl"}
                             ]
                         },
                         {
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                                {"type": "text", "text": "🔹 買入", "flex": 2, "color": "#FFFFFF"},
-                                {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "color": "#FFFFFF", "align": "end"}
+                                {"type": "text", "text": "🔹 買入", "flex": 2, "color": "#FFFFFF","gravity": "center"},
+                                {"type": "text", "text": f"{pt_buy} 元／錢", "flex": 3, "color": "#FFFFFF", "align": "end", "gravity": "center", "size": "xl"}
                             ]
                         }
                     ]
