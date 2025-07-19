@@ -154,6 +154,7 @@ def reply_gold_price(reply_token):
                 }
             ],
             "paddingBottom": "none"
+            "spacing": "sm"
         },
         "body": {
             "type": "box",
