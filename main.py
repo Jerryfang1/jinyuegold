@@ -114,7 +114,7 @@ def reply_gold_price(reply_token):
 
     # 取值
     gold_sell = int(matched.get("黃金賣出", "N/A")) - 200
-    gold_buy = matched.get("黃金買入", "N/A")
+    gold_buy = int(matched.get("黃金買入", "N/A")) + 100
     pt_sell = matched.get("鉑金賣出", "N/A")
     pt_buy = matched.get("鉑金買入", "N/A")
     date_str = matched.get("日期", "")
@@ -144,8 +144,16 @@ def reply_gold_price(reply_token):
                     "weight": "bold",
                     "color": "#B08B4F",
                     "align": "center",
-                    "margin": "none",
-                    "size": "md"
+                    "margin": "sm",
+                    "size": "lg"
+                },
+                {
+                    "type": "text",
+                    "text": "會員價格",
+                    "size": "lg",
+                    "weight": "bold",
+                    "align": "center",
+                    "offsetTop": "15px"
                 }
             ]
         },
