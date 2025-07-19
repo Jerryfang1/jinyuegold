@@ -135,8 +135,7 @@ def reply_gold_price(reply_token):
                     "size": "xl",
                     "color": "#1C1c1c",
                     "weight": "bold",
-                    "align": "center",
-                    "margin": "md"
+                    "align": "center"
                 },
                 {
                     "type": "text",
@@ -144,7 +143,6 @@ def reply_gold_price(reply_token):
                     "weight": "bold",
                     "color": "#B08B4F",
                     "align": "center",
-                    "margin": "sm",
                     "size": "lg"
                 },
                 {
@@ -153,14 +151,13 @@ def reply_gold_price(reply_token):
                     "size": "lg",
                     "weight": "bold",
                     "align": "center",
-                    "offsetTop": "15px"
                 }
-            ]
+            ],
+            "paddingBottom": "none"
         },
         "body": {
             "type": "box",
             "layout": "vertical",
-            "spacing": "lg",
             "contents": [
                 {
                     "type": "box",
