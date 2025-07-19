@@ -113,7 +113,7 @@ def reply_gold_price(reply_token):
         return
 
     # 取值
-    gold_sell = f"{int(matched.get("黃金賣出", "N/A")) - 200}"
+    gold_sell = int(matched.get("黃金賣出", "N/A")) - 200
     gold_buy = matched.get("黃金買入", "N/A")
     pt_sell = matched.get("鉑金賣出", "N/A")
     pt_buy = matched.get("鉑金買入", "N/A")
