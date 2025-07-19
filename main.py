@@ -153,7 +153,7 @@ def reply_gold_price(reply_token):
                     "align": "center",
                 }
             ],
-            "paddingBottom": "none"
+            "paddingBottom": "none",
             "spacing": "sm"
         },
         "body": {
