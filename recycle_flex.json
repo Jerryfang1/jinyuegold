@@ -74,7 +74,7 @@
           },
           {
             "type": "text",
-            "text": "Thermo XRF驗金機",
+            "text": "快速初步檢驗",
             "size": "md",
             "gravity": "center",
             "margin": "xs",
@@ -197,7 +197,7 @@
           },
           {
             "type": "text",
-            "text": "符合標準局合格磅秤",
+            "text": "合格磅秤秤重",
             "size": "md",
             "gravity": "center",
             "margin": "xs",
@@ -257,7 +257,7 @@
             "contents": [
               {
                 "type": "text",
-                "text": "高精準磅秤",
+                "text": "標準局合格磅秤",
                 "size": "xs",
                 "margin": "md"
               },
@@ -273,7 +273,7 @@
               },
               {
                 "type": "text",
-                "text": "初步評估會收價格",
+                "text": "初步評估回收價格",
                 "size": "xs"
               }
             ]
@@ -320,7 +320,7 @@
           },
           {
             "type": "text",
-            "text": "回收規則說明及確認",
+            "text": "回收說明及確認",
             "size": "md",
             "gravity": "center",
             "margin": "xs",
@@ -438,7 +438,7 @@
           },
           {
             "type": "text",
-            "text": "採現金方式",
+            "text": "現金交付客戶",
             "size": "md",
             "gravity": "center",
             "margin": "xs",
