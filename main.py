@@ -58,14 +58,6 @@ def callback():
         abort(400)
     return "OK"
 
-
-@handler.add(MessageEvent)
-def handle_message(event):
-    if isinstance(event.message, V3TextMessageContent):
-        text = event.message.text.strip()
-        if text == "查詢今日金價":
-            reply_gold_price(event.reply_token)
-
 @handler.add(PostbackEvent)
 def handle_postback(event):
     if event.postback.data == "action=gold":
