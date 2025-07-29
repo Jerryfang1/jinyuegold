@@ -1,0 +1,516 @@
+{
+  "type": "bubble",
+  "size": "mega",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/純金玥-去背.png",
+        "size": "xs"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "黃金回收流程",
+            "color": "#e6c35c",
+            "size": "xl",
+            "flex": 4,
+            "weight": "bold",
+            "align": "center"
+          }
+        ]
+      }
+    ],
+    "paddingAll": "20px",
+    "backgroundColor": "#422f00",
+    "paddingTop": "22px",
+    "spacing": "lg"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "一、飾品檢驗",
+            "gravity": "center",
+            "flex": 0,
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler",
+                "flex": 2
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [],
+                "cornerRadius": "xl",
+                "borderColor": "#996B1F",
+                "borderWidth": "semi-bold",
+                "width": "15px",
+                "height": "15px"
+              },
+              {
+                "type": "filler"
+              }
+            ],
+            "flex": 0,
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "Thermo XRF驗金機",
+            "size": "md",
+            "gravity": "center",
+            "margin": "xs",
+            "color": "#4d3900",
+            "weight": "bold",
+            "decoration": "underline"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/驗金儀器.png"
+              }
+            ],
+            "flex": 0,
+            "width": "88px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "filler"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "4px",
+                    "backgroundColor": "#996B1F"
+                  },
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "flex": 1
+              }
+            ],
+            "width": "20px",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "採XRF儀器檢測飾品",
+                "size": "xs",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "無須破壞飾品",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "分析飾品成分、成色",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "快速安全又放心",
+                "size": "xs"
+              }
+            ]
+          }
+        ],
+        "height": "88px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "二、秤重確認",
+            "gravity": "center",
+            "flex": 0,
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler",
+                "flex": 2
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [],
+                "cornerRadius": "xl",
+                "borderColor": "#996B1F",
+                "borderWidth": "semi-bold",
+                "width": "15px",
+                "height": "15px"
+              },
+              {
+                "type": "filler"
+              }
+            ],
+            "flex": 0,
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "符合標準局合格磅秤",
+            "size": "md",
+            "gravity": "center",
+            "margin": "xs",
+            "color": "#4d3900",
+            "weight": "bold",
+            "decoration": "underline"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/磅秤.png"
+              }
+            ],
+            "flex": 0,
+            "width": "88px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "filler"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "4px",
+                    "backgroundColor": "#996B1F"
+                  },
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "flex": 1
+              }
+            ],
+            "width": "20px",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "高精準磅秤",
+                "size": "xs",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "size": "xs",
+                "text": "於客戶面前秤重"
+              },
+              {
+                "type": "text",
+                "text": "過程透明安心",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "初步評估會收價格",
+                "size": "xs"
+              }
+            ]
+          }
+        ],
+        "height": "88px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "三、回收確認",
+            "gravity": "center",
+            "flex": 0,
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler",
+                "flex": 1
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [],
+                "cornerRadius": "xl",
+                "borderColor": "#996B1F",
+                "borderWidth": "semi-bold",
+                "width": "15px",
+                "height": "15px"
+              },
+              {
+                "type": "filler"
+              }
+            ],
+            "flex": 0,
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "回收規則說明及確認",
+            "size": "md",
+            "gravity": "center",
+            "margin": "xs",
+            "color": "#4d3900",
+            "weight": "bold",
+            "decoration": "underline"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "flex": 0,
+            "width": "88px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "filler"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "4px",
+                    "backgroundColor": "#996B1F"
+                  },
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "flex": 1
+              }
+            ],
+            "width": "20px",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "告知初步評估價格",
+                "size": "xs",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "與客戶確認是否同意回收",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "破壞飾品及火燒",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "作為最後檢驗",
+                "size": "xs"
+              }
+            ]
+          }
+        ],
+        "height": "88px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "四、完成回收",
+            "gravity": "center",
+            "flex": 0,
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler",
+                "flex": 1
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [],
+                "cornerRadius": "xl",
+                "borderColor": "#996B1F",
+                "borderWidth": "semi-bold",
+                "width": "15px",
+                "height": "15px"
+              },
+              {
+                "type": "filler"
+              }
+            ],
+            "flex": 0,
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "採現金方式",
+            "size": "md",
+            "gravity": "center",
+            "margin": "xs",
+            "weight": "bold",
+            "decoration": "underline"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [],
+            "flex": 0,
+            "width": "88px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "filler"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "4px",
+                    "backgroundColor": "#996B1F"
+                  },
+                  {
+                    "type": "filler"
+                  }
+                ],
+                "flex": 1
+              }
+            ],
+            "width": "20px",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "門市內備有點鈔機",
+                "size": "xs",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "安心點鈔無假鈔疑慮",
+                "size": "xs"
+              },
+              {
+                "type": "text",
+                "text": "回收過程安全安心有保障",
+                "size": "xs"
+              }
+            ]
+          }
+        ],
+        "height": "88px"
+      }
+    ]
+  }
+}
