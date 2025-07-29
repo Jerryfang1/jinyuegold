@@ -60,8 +60,13 @@ def callback():
 
 @handler.add(PostbackEvent)
 def handle_postback(event):
-    if event.postback.data == "action=gold":
+    data = event.postback.data
+
+    if data == "action=gold":
         reply_gold_price(event.reply_token)
+
+    elif data == "action=recycle":
+        reply_recycle_info(event.reply_token)
 
 
 def reply_gold_price(reply_token):
@@ -262,6 +267,22 @@ def reply_gold_price(reply_token):
                 FlexMessage(
                     alt_text="查詢今日金價",
                     contents=FlexContainer.from_dict(flex_content)
+                )
+            ]
+        )
+    )
+
+def reply_recycle_info(reply_token):
+    with open("recycle_flex.json", "r", encoding="utf-8") as f:
+        recycle_json = json.load(f)
+    
+    line_bot_api.reply_message(
+        ReplyMessageRequest(
+            reply_token=reply_token,
+            messages=[
+                FlexMessage(
+                    alt_text="黃金回收流程介紹",
+                    contents=FlexContainer.from_dict(recycle_json)
                 )
             ]
         )
