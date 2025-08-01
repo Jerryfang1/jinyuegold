@@ -15,7 +15,7 @@
       },
       {
         "type": "text",
-        "text": "2025/6/28 14:30",
+        "text": "🗓️ {date_str} {time_str}",
         "size": "lg",
         "color": "#B08B4F",
         "align": "center",
