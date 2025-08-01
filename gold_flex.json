@@ -15,7 +15,7 @@
       },
       {
         "type": "text",
-        "text": "🗓️ {date_str} {time_str}",
+        "text": f"🗓️ {date_str} {time_str}",
         "size": "lg",
         "color": "#B08B4F",
         "align": "center",
@@ -62,7 +62,7 @@
               },
               {
                 "type": "text",
-                "text": "{gold_sell} 元／錢",
+                "text": f"{gold_sell} 元／錢",
                 "color": "#1c1c1c",
                 "flex": 3,
                 "size": "xl",
@@ -84,7 +84,7 @@
               },
               {
                 "type": "text",
-                "text": "{gold_buy} 元／錢",
+                "text": f"{gold_buy} 元／錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -122,7 +122,7 @@
               },
               {
                 "type": "text",
-                "text": "{pt_sell} 元／錢",
+                "text": f"{pt_sell} 元／錢",
                 "align": "end",
                 "color": "#FFFFFF",
                 "flex": 3,
@@ -143,7 +143,7 @@
               },
               {
                 "type": "text",
-                "text": "{pt_buy} 元／錢",
+                "text": f"{pt_buy} 元／錢",
                 "align": "end",
                 "color": "#FFFFFF",
                 "size": "xl",
