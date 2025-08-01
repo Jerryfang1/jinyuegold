@@ -120,10 +120,21 @@ def reply_gold_price(reply_token):
 
     # 建立 Flex Message 卡片
     with open("gold_flex.json", "r", encoding="utf-8") as f:
-        flex_dict = json.load(f)
-
-    # 根據實際金價資料替換內容（可選）
-    # flex_dict['body']['contents'] = [...]
+        template_str = f.read()
+    # 替換內容（記得 JSON 內使用的 placeholder 必須是獨特的字，例如 {GOLD_SELL}）
+    template_str = (
+        template_str
+        .replace("{DATE}", date_str)
+        .replace("{TIME}", time_str)
+        .replace("{WEEKDAY}", week_str)
+        .replace("{GOLD_SELL}", str(gold_sell))
+        .replace("{GOLD_BUY}", str(gold_buy))
+        .replace("{PT_SELL}", str(pt_sell))
+        .replace("{PT_BUY}", str(pt_buy))
+    )
+    
+    # 轉回 dict 格式
+    flex_dict = json.loads(template_str)
 
     line_bot_api.reply_message(
         ReplyMessageRequest(
