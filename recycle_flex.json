@@ -473,13 +473,13 @@
               {
                 "type": "text",
                 "text": "飾品回收完成",
-                "size": "xs"
+                "size": "xs",
+                "margin": "md"
               },
               {
                 "type": "text",
                 "text": "門市內備有點鈔機",
-                "size": "xs",
-                "margin": "md"
+                "size": "xs"
               },
               {
                 "type": "text",
@@ -494,4 +494,5 @@
     ]
   }
 }
+
 
