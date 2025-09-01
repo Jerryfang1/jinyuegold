@@ -6,17 +6,12 @@
     "layout": "vertical",
     "contents": [
       {
-        "type": "image",
-        "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/純金玥-去背.png",
-        "size": "xs"
-      },
-      {
         "type": "box",
         "layout": "horizontal",
         "contents": [
           {
             "type": "text",
-            "text": "黃金回收流程",
+            "text": "飾品回收流程",
             "color": "#e6c35c",
             "size": "xl",
             "flex": 4,
@@ -91,12 +86,7 @@
           {
             "type": "box",
             "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/驗金儀器.png"
-              }
-            ],
+            "contents": [],
             "flex": 0,
             "width": "88px"
           },
@@ -134,7 +124,7 @@
             "contents": [
               {
                 "type": "text",
-                "text": "採XRF儀器檢測飾品",
+                "text": "採XRF貴金屬分析儀",
                 "size": "xs",
                 "margin": "md"
               },
@@ -145,12 +135,12 @@
               },
               {
                 "type": "text",
-                "text": "分析飾品成分、成色",
+                "text": "分析飾品成分及成色",
                 "size": "xs"
               },
               {
                 "type": "text",
-                "text": "快速安全又放心",
+                "text": "快速初步分析飾品",
                 "size": "xs"
               }
             ]
@@ -214,12 +204,7 @@
           {
             "type": "box",
             "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://maintaina.com.tw/wp-content/uploads/2025/07/磅秤.png"
-              }
-            ],
+            "contents": [],
             "flex": 0,
             "width": "88px"
           },
@@ -257,18 +242,13 @@
             "contents": [
               {
                 "type": "text",
-                "text": "標準局合格磅秤",
+                "text": "使用合規磅秤秤重",
                 "size": "xs",
                 "margin": "md"
               },
               {
                 "type": "text",
-                "size": "xs",
-                "text": "於客戶面前秤重"
-              },
-              {
-                "type": "text",
-                "text": "過程透明安心",
+                "text": "秤重過程透明安心",
                 "size": "xs"
               },
               {
@@ -375,7 +355,7 @@
             "contents": [
               {
                 "type": "text",
-                "text": "告知初步評估價格",
+                "text": "說明銀樓回收規則",
                 "size": "xs",
                 "margin": "md"
               },
@@ -391,7 +371,7 @@
               },
               {
                 "type": "text",
-                "text": "作為最後檢驗",
+                "text": "作為最後檢驗步驟",
                 "size": "xs"
               }
             ]
@@ -492,18 +472,18 @@
             "contents": [
               {
                 "type": "text",
+                "text": "飾品回收完成",
+                "size": "xs"
+              },
+              {
+                "type": "text",
                 "text": "門市內備有點鈔機",
                 "size": "xs",
                 "margin": "md"
               },
               {
                 "type": "text",
-                "text": "安心點鈔無假鈔疑慮",
-                "size": "xs"
-              },
-              {
-                "type": "text",
-                "text": "回收過程有保障",
+                "text": "快速安心的交付現金",
                 "size": "xs"
               }
             ]
@@ -514,3 +494,4 @@
     ]
   }
 }
+
