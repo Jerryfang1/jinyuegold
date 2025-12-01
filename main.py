@@ -87,17 +87,18 @@ def reply_gold_price(reply_token):
         )
         return
     matched = None
-    used_date_str = today_str
+    used_date_str = None
 
     for i in range(0, 60):
         check_date = (today - timedelta(days=i)).strftime("%Y/%m/%d")
         print(f"[DEBUG] 嘗試日期：{check_date}")
 
         matched = next(
-            (row for row in records if str(row.get("日期", "")).strip() == check_date),
+            (row for row in records
+             if str(row.get("日期", "")).strip() == check_date),
             None
         )
-
+        
         if matched:
             used_date_str = check_date
             break
@@ -108,7 +109,7 @@ def reply_gold_price(reply_token):
         line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
-                messages=[TextMessage(text=f"⚠️ 找不到最近 60 天內的報價資料，請聯繫店家。")]
+                messages=[TextMessage(text=f"⚠️ 找不到最近 60 天內報價資料（從 {today_str} 往前算），請聯繫店家。")]
             )
         )
         return
