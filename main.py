@@ -86,28 +86,34 @@ def reply_gold_price(reply_token):
             )
         )
         return
-    matched = next(
-        (row for row in records if str(row.get("日期", "")).strip() == today_str),
-        None
-    )
-    
-    if not matched:
-        print("[DEBUG] 找不到今日報價，嘗試找昨日...")
-        yesterday_str = (today - timedelta(days=1)).strftime("%Y/%m/%d")
+    matched = None
+    used_date_str = today_str
+
+    for i in range(0, 60):
+        check_date = (today - timedelta(days=i)).strftime("%Y/%m/%d")
+        print(f"[DEBUG] 嘗試日期：{check_date}")
+
         matched = next(
-            (row for row in records if str(row.get("日期", "")).strip() == yesterday_str),
+            (row for row in records if str(row.get("日期", "")).strip() == check_date),
             None
         )
+
+        if matched:
+            used_date_str = check_date
+            break
+
     print("[DEBUG] matched 資料：", matched)
-    
+
     if not matched:
         line_bot_api.reply_message(
             ReplyMessageRequest(
                 reply_token=reply_token,
-                messages=[TextMessage(text=f"⚠️ 找不到今日（{today_str}）報價資料，請聯繫店家。")]
+                messages=[TextMessage(text=f"⚠️ 找不到最近 60 天內的報價資料，請聯繫店家。")]
             )
         )
         return
+
+    print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
     gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
