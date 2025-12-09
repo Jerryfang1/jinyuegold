@@ -249,7 +249,7 @@ def reply_gold_today(reply_token):
             reply_token=reply_token,
             messages=[
                 FlexMessage(
-                    alt_text="今日金價",
+                    alt_text="本日金價",
                     contents=FlexContainer.from_dict(flex_dict)
                 )
             ]
