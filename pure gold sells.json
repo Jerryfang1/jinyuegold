@@ -20,7 +20,7 @@
           },
           {
             "type": "text",
-            "text": "2025/6/28 14:30",
+            "text": "{DATE} {WEEKDAY} {TIME}",
             "size": "md",
             "color": "#B08B4F",
             "align": "center",
@@ -63,7 +63,7 @@
               },
               {
                 "type": "text",
-                "text": "7970 元/錢",
+                "text": "{GOLD_SELL} 元/錢",
                 "color": "#1c1c1c",
                 "flex": 3,
                 "size": "20px",
@@ -87,7 +87,7 @@
               },
               {
                 "type": "text",
-                "text": "7810 元/錢",
+                "text": "{GOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -131,4 +131,5 @@
       "centerColor": "#E9DDC0"
     }
   }
+
 }
