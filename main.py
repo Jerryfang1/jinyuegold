@@ -237,8 +237,6 @@ def reply_gold_today(reply_token):
         .replace("{WEEKDAY}", week_str)
         .replace("{GOLD_SELL}", str(gold_sell))
         .replace("{GOLD_BUY}", str(gold_buy))
-        .replace("{PT_SELL}", str(pt_sell))
-        .replace("{PT_BUY}", str(pt_buy))
     )
     
     # 轉回 dict 格式
