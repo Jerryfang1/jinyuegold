@@ -1,6 +1,6 @@
 {
   "type": "bubble",
-  "size": "mega",
+  "size": "hecto",
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -99,7 +99,7 @@
             "contents": [
               {
                 "type": "text",
-                "text": "18K｜75.0%   ███████░░",
+                "text": "18K｜75.0% ███████░░",
                 "size": "17px",
                 "color": "#C7A76C",
                 "wrap": true,
@@ -145,7 +145,7 @@
           {
             "type": "text",
             "text": "1.電鍍層、焊點、鑲嵌物不計重量",
-            "size": "md",
+            "size": "sm",
             "color": "#6A604C",
             "wrap": true,
             "margin": "md"
@@ -153,7 +153,7 @@
           {
             "type": "text",
             "text": "2.回收重量及成色依燒熔後為主",
-            "size": "md",
+            "size": "sm",
             "color": "#6A604C",
             "wrap": true,
             "margin": "md"
@@ -161,7 +161,7 @@
           {
             "type": "text",
             "text": "3.全程客戶面前操作，確保雙方權益",
-            "size": "md",
+            "size": "sm",
             "color": "#6A604C",
             "wrap": true,
             "margin": "md"
@@ -183,4 +183,5 @@
       "backgroundColor": "#000000"
     }
   }
+
 }
