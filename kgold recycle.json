@@ -77,7 +77,13 @@
       {
         "type": "box",
         "layout": "vertical",
-        "contents": []
+        "contents": [ 
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#404040"
+          }
+        ]
       },
       {
         "type": "box",
@@ -185,6 +191,7 @@
   }
 
 }
+
 
 
 
