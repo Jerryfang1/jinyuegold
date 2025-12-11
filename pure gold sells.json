@@ -108,12 +108,14 @@
             "type": "text",
             "text": "金價波動頻繁，歡迎現場洽詢",
             "align": "center",
+            "size": "md",
             "margin": "none"
           },
           {
             "type": "text",
             "text": "實際成交價格依店內報價為準",
             "align": "center",
+            "size": "md",
             "margin": "md"
           }
         ],
@@ -134,4 +136,5 @@
   }
 
 }
+
 
