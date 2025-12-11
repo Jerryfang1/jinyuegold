@@ -104,28 +104,76 @@
             "spacing": "xs",
             "contents": [
               {
-                "type": "text",
-                "text": "18K｜75.0% ████████░░",
-                "size": "sm",
-                "color": "#C7A76C",
-                "wrap": true,
-                "margin": "md"
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "18K｜75.0%",
+                    "size": "sm",
+                    "color": "#C7A76C",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "███████░░",
+                    "size": "sm",
+                    "color": "#C7A76C",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  }
+                ]
               },
               {
-                "type": "text",
-                "text": "14K｜58.5% ██████░░░░",
-                "size": "sm",
-                "color": "#BFAA8E",
-                "wrap": true,
-                "margin": "md"
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "14K｜58.5%",
+                    "size": "sm",
+                    "color": "#BFAA8E",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "█████░░░░",
+                    "size": "sm",
+                    "color": "#BFAA8E",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  }
+                ]
               },
               {
-                "type": "text",
-                "text": "10K｜41.7% ████░░░░░░",
-                "size": "sm",
-                "color": "#A8A29A",
-                "wrap": true,
-                "margin": "md"
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "10K｜41.7%",
+                    "size": "sm",
+                    "color": "#A8A29A",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "████░░░░░",
+                    "size": "sm",
+                    "color": "#A8A29A",
+                    "wrap": true,
+                    "margin": "md",
+                    "flex": 0
+                  }
+                ]
               }
             ]
           }
@@ -191,6 +239,7 @@
   }
 
 }
+
 
 
 
