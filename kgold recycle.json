@@ -88,7 +88,7 @@
             "type": "text",
             "text": "K金含金量",
             "weight": "bold",
-            "size": "lg",
+            "size": "md",
             "color": "#6D5A45"
           },
           {
@@ -139,7 +139,7 @@
             "type": "text",
             "text": "回收說明",
             "weight": "bold",
-            "size": "lg",
+            "size": "md",
             "color": "#6D5A45"
           },
           {
@@ -185,5 +185,6 @@
   }
 
 }
+
 
 
