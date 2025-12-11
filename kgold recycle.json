@@ -1,6 +1,6 @@
 {
   "type": "bubble",
-  "size": "hecto",
+  "size": "kilo",
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -185,3 +185,4 @@
   }
 
 }
+
