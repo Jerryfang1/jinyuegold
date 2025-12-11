@@ -93,7 +93,7 @@
           },
           {
             "type": "text",
-            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "text": "1.金價波動頻繁，實際依店內報價",
             "size": "sm",
             "color": "#6A604C",
             "wrap": true,
@@ -101,15 +101,7 @@
           },
           {
             "type": "text",
-            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
-            "size": "sm",
-            "color": "#6A604C",
-            "wrap": true,
-            "margin": "md"
-          },
-          {
-            "type": "text",
-            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "text": "2.成色999以上不夠重",
             "size": "sm",
             "color": "#6A604C",
             "wrap": true,
@@ -131,3 +123,4 @@
     }
   }
 }
+
