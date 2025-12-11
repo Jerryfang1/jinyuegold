@@ -40,7 +40,7 @@
             "color": "#B08B4F",
             "align": "center",
             "weight": "bold",
-            "margin": "sm"
+            "margin": "md"
           },
           {
             "type": "separator",
@@ -114,7 +114,7 @@
                     "color": "#C7A76C",
                     "wrap": true,
                     "margin": "md",
-                    "flex": 0
+                    "flex": 1
                   },
                   {
                     "type": "text",
@@ -138,7 +138,7 @@
                     "color": "#BFAA8E",
                     "wrap": true,
                     "margin": "md",
-                    "flex": 0
+                    "flex": 1
                   },
                   {
                     "type": "text",
@@ -162,7 +162,7 @@
                     "color": "#A8A29A",
                     "wrap": true,
                     "margin": "md",
-                    "flex": 0
+                    "flex": 1
                   },
                   {
                     "type": "text",
@@ -239,6 +239,7 @@
   }
 
 }
+
 
 
 
