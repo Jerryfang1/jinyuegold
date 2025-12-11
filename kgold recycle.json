@@ -100,7 +100,7 @@
               {
                 "type": "text",
                 "text": "18K｜75.0% ███████░░",
-                "size": "17px",
+                "size": "sm",
                 "color": "#C7A76C",
                 "wrap": true,
                 "margin": "md"
@@ -108,7 +108,7 @@
               {
                 "type": "text",
                 "text": "14K｜58.5% █████░░░░",
-                "size": "17px",
+                "size": "sm",
                 "color": "#BFAA8E",
                 "wrap": true,
                 "margin": "md"
@@ -116,7 +116,7 @@
               {
                 "type": "text",
                 "text": "10K｜41.7% ████░░░░░",
-                "size": "17px",
+                "size": "sm",
                 "color": "#A8A29A",
                 "wrap": true,
                 "margin": "md"
@@ -185,4 +185,5 @@
   }
 
 }
+
 
