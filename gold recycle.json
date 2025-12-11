@@ -1,35 +1,23 @@
 {
   "type": "bubble",
-  "size": "hecto",
+  "size": "kilo",
   "body": {
     "type": "box",
     "layout": "vertical",
+    "spacing": "lg",
     "contents": [
       {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "報價時間",
-            "size": "xl",
-            "color": "#1C1c1c",
-            "weight": "bold",
-            "align": "center",
-            "margin": "sm"
-          },
-          {
-            "type": "text",
-            "text": "{DATE} {WEEKDAY} {TIME}",
-            "size": "md",
-            "color": "#B08B4F",
-            "align": "center",
-            "weight": "bold",
-            "margin": "sm"
-          }
-        ],
-        "paddingBottom": "none",
-        "spacing": "sm"
+        "type": "text",
+        "text": "K 金回收",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#1C1c1c",
+        "align": "center"
+      },
+      {
+        "type": "separator",
+        "margin": "md",
+        "color": "#404040"
       },
       {
         "type": "box",
@@ -39,16 +27,25 @@
         "contents": [
           {
             "type": "text",
-            "text": "黃金",
-            "size": "lg",
+            "text": "本日金價",
+            "size": "md",
             "color": "#C8A86D",
             "weight": "bold",
             "align": "center"
           },
           {
-            "type": "separator",
-            "color": "#D8C9A8",
+            "type": "text",
+            "text": "{DATE} {WEEKDAY}",
+            "size": "md",
+            "color": "#B08B4F",
+            "align": "center",
+            "weight": "bold",
             "margin": "md"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#D8C9A8"
           },
           {
             "type": "box",
@@ -73,12 +70,20 @@
             ]
           }
         ],
-        "paddingAll": "15px",
-        "spacing": "md"
+        "spacing": "md",
+        "margin": "xl",
+        "paddingAll": "15px"
       },
       {
-        "type": "separator",
-        "color": "#404040"
+        "type": "box",
+        "layout": "vertical",
+        "contents": [ 
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#404040"
+          }
+        ]
       },
       {
         "type": "box",
@@ -123,4 +128,5 @@
     }
   }
 }
+
 
