@@ -47,32 +47,8 @@
           },
           {
             "type": "separator",
-            "color": "#404040",
+            "color": "#D8C9A8",
             "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "🔸 賣出",
-                "color": "#C05A5A",
-                "gravity": "center",
-                "flex": 2,
-                "size": "sm"
-              },
-              {
-                "type": "text",
-                "text": "{GOLD_SELL} 元/錢",
-                "color": "#1c1c1c",
-                "flex": 3,
-                "size": "20px",
-                "align": "end",
-                "gravity": "center"
-              }
-            ],
-            "margin": "lg"
           },
           {
             "type": "box",
@@ -101,26 +77,46 @@
         "spacing": "md"
       },
       {
+        "type": "separator",
+        "color": "#404040"
+      },
+      {
         "type": "box",
         "layout": "vertical",
         "contents": [
           {
             "type": "text",
-            "text": "金價波動頻繁，歡迎現場洽詢",
-            "align": "center",
-            "size": "sm",
-            "margin": "none"
+            "text": "回收說明",
+            "weight": "bold",
+            "margin": "md",
+            "color": "#6D5A45"
           },
           {
             "type": "text",
-            "text": "實際成交價格依店內報價為準",
-            "align": "center",
+            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
             "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
             "margin": "md"
           }
         ],
-        "paddingBottom": "xl",
-        "margin": "xxl"
+        "margin": "md"
       }
     ],
     "spacing": "lg",
@@ -134,8 +130,4 @@
       "centerColor": "#E9DDC0"
     }
   }
-
 }
-
-
-
