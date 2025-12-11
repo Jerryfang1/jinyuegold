@@ -8,7 +8,7 @@
     "contents": [
       {
         "type": "text",
-        "text": "K 金回收",
+        "text": "黃金回收",
         "weight": "bold",
         "size": "xl",
         "color": "#1C1c1c",
@@ -106,7 +106,7 @@
           },
           {
             "type": "text",
-            "text": "2.成色999以上不夠重",
+            "text": "2.黃金成色999以上不額外扣重",
             "size": "sm",
             "color": "#6A604C",
             "wrap": true,
@@ -128,5 +128,6 @@
     }
   }
 }
+
 
 
