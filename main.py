@@ -72,6 +72,7 @@ def handle_postback(event):
         reply_kgoldrecycle_today(event.reply_token)    
     elif data == "action=gold_today":
         reply_gold_today(event.reply_token)
+        
 ########################################################################
 def reply_total_price(reply_token):
     today = datetime.now()
@@ -207,7 +208,10 @@ def reply_gold_price(reply_token):
     print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
+    gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
     gold_buy = int(matched.get("黃金買入", "N/A")) + 100
+    pt_sell = int(matched.get("鉑金賣出", "N/A")) - 100
+    pt_buy = int(matched.get("鉑金買入", "N/A")) + 100
     date_str = matched.get("日期", "")
     week_str = matched.get("星期", "")
     time_str = matched.get("時間", "")
@@ -235,7 +239,7 @@ def reply_gold_price(reply_token):
             reply_token=reply_token,
             messages=[
                 FlexMessage(
-                    alt_text="今日金價",
+                    alt_text="黃金回收",
                     contents=FlexContainer.from_dict(flex_dict)
                 )
             ]
