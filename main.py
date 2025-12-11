@@ -64,12 +64,15 @@ def handle_postback(event):
 
     if data == "action=gold":
         reply_gold_price(event.reply_token)
-    elif data == "action=gold_today":
-        reply_gold_today(event.reply_token)
     elif data == "action=recycle":
         reply_recycle_info(event.reply_token)
+    elif data == "action=kgoldrecycle":
+        reply_kgoldrecycle_today(event.reply_token)    
+    elif data == "action=gold_today":
+        reply_gold_today(event.reply_token)
 
 
+########################################################################
 def reply_gold_price(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
@@ -155,7 +158,7 @@ def reply_gold_price(reply_token):
             ]
         )
     )
-
+########################################################################
 def reply_recycle_info(reply_token):
     with open("recycle_flex.json", "r", encoding="utf-8") as f:
         recycle_json = json.load(f)
@@ -171,7 +174,91 @@ def reply_recycle_info(reply_token):
             ]
         )
     )
+########################################################################
+def reply_kgoldrecycle_today(reply_token):
+    today = datetime.now()
+    today_str = today.strftime("%Y/%m/%d")
+    print(f"[DEBUG] 查詢今日金價，今日日期：{today_str}")
 
+
+    
+    try:
+        records = sheet.get_all_records()
+    except Exception as e:
+        error_msg = f"無法讀取報價資料：{str(e)}"
+        print("[ERROR] Google Sheet 讀取錯誤：", error_msg)
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=reply_token,
+                messages=[TextMessage(text=error_msg)]
+            )
+        )
+        return
+    matched = None
+    used_date_str = None
+
+    for i in range(0, 60):
+        check_date = (today - timedelta(days=i)).strftime("%Y/%m/%d")
+        print(f"[DEBUG] 嘗試日期：{check_date}")
+
+        matched = next(
+            (row for row in records
+             if str(row.get("日期", "")).strip() == check_date),
+            None
+        )
+        
+        if matched:
+            used_date_str = check_date
+            break
+
+    print("[DEBUG] matched 資料：", matched)
+
+    if not matched:
+        line_bot_api.reply_message(
+            ReplyMessageRequest(
+                reply_token=reply_token,
+                messages=[TextMessage(text=f"⚠️ 找不到最近 60 天內報價資料（從 {today_str} 往前算），請聯繫店家。")]
+            )
+        )
+        return
+
+    print(f"[DEBUG] 最終使用日期：{used_date_str}")
+
+    # 取值
+    gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
+    gold_buy = int(matched.get("黃金買入", "N/A")) + 100
+    date_str = matched.get("日期", "")
+    week_str = matched.get("星期", "")
+    time_str = matched.get("時間", "")
+
+    # 建立 Flex Message 卡片
+    with open("kgold recycle.json", "r", encoding="utf-8") as f:
+        template_str = f.read()
+    # 替換內容（記得 JSON 內使用的 placeholder 必須是獨特的字，例如 {GOLD_SELL}）
+    template_str = (
+        template_str
+        .replace("{DATE}", date_str)
+        .replace("{TIME}", time_str)
+        .replace("{WEEKDAY}", week_str)
+        .replace("{GOLD_SELL}", str(gold_sell))
+        .replace("{GOLD_BUY}", str(gold_buy))
+    )
+    
+    # 轉回 dict 格式
+    flex_dict = json.loads(template_str)
+
+    line_bot_api.reply_message(
+        ReplyMessageRequest(
+            reply_token=reply_token,
+            messages=[
+                FlexMessage(
+                    alt_text="K金回收",
+                    contents=FlexContainer.from_dict(flex_dict)
+                )
+            ]
+        )
+    )
+########################################################################
 def reply_gold_today(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
