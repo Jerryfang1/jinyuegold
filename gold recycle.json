@@ -1,0 +1,141 @@
+{
+  "type": "bubble",
+  "size": "hecto",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "報價時間",
+            "size": "xl",
+            "color": "#1C1c1c",
+            "weight": "bold",
+            "align": "center",
+            "margin": "sm"
+          },
+          {
+            "type": "text",
+            "text": "{DATE} {WEEKDAY} {TIME}",
+            "size": "md",
+            "color": "#B08B4F",
+            "align": "center",
+            "weight": "bold",
+            "margin": "sm"
+          }
+        ],
+        "paddingBottom": "none",
+        "spacing": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "backgroundColor": "#F3EDE0",
+        "cornerRadius": "xxl",
+        "contents": [
+          {
+            "type": "text",
+            "text": "黃金",
+            "size": "lg",
+            "color": "#C8A86D",
+            "weight": "bold",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#404040",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "🔸 賣出",
+                "color": "#C05A5A",
+                "gravity": "center",
+                "flex": 2,
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_SELL} 元/錢",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px",
+                "align": "end",
+                "gravity": "center"
+              }
+            ],
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "🔹 買入",
+                "color": "#4A74C2",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          }
+        ],
+        "paddingAll": "15px",
+        "spacing": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "金價波動頻繁，歡迎現場洽詢",
+            "align": "center",
+            "size": "sm",
+            "margin": "none"
+          },
+          {
+            "type": "text",
+            "text": "實際成交價格依店內報價為準",
+            "align": "center",
+            "size": "sm",
+            "margin": "md"
+          }
+        ],
+        "paddingBottom": "xl",
+        "margin": "xxl"
+      }
+    ],
+    "spacing": "lg",
+    "backgroundColor": "#FFF9F1",
+    "cornerRadius": "xxl",
+    "background": {
+      "type": "linearGradient",
+      "angle": "180deg",
+      "startColor": "#ffffe7",
+      "endColor": "#ffffe7",
+      "centerColor": "#E9DDC0"
+    }
+  }
+
+}
+
+
+
