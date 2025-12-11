@@ -28,14 +28,14 @@
           {
             "type": "text",
             "text": "本日金價",
-            "size": "lg",
+            "size": "md",
             "color": "#C8A86D",
             "weight": "bold",
             "align": "center"
           },
           {
             "type": "text",
-            "text": "{DATE} {WEEKDAY} {TIME}",
+            "text": "{DATE} {WEEKDAY}",
             "size": "md",
             "color": "#B08B4F",
             "align": "center",
@@ -45,7 +45,7 @@
           {
             "type": "separator",
             "margin": "md",
-            "color": "#404040"
+            "color": "#D8C9A8"
           },
           {
             "type": "box",
@@ -239,6 +239,7 @@
   }
 
 }
+
 
 
 
