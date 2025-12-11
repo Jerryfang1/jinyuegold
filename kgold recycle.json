@@ -1,0 +1,186 @@
+{
+  "type": "bubble",
+  "size": "mega",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "lg",
+    "contents": [
+      {
+        "type": "text",
+        "text": "K 金回收",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#1C1c1c",
+        "align": "center"
+      },
+      {
+        "type": "separator",
+        "margin": "md",
+        "color": "#404040"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "backgroundColor": "#F3EDE0",
+        "cornerRadius": "xxl",
+        "contents": [
+          {
+            "type": "text",
+            "text": "本日金價",
+            "size": "lg",
+            "color": "#C8A86D",
+            "weight": "bold",
+            "align": "center"
+          },
+          {
+            "type": "text",
+            "text": "{DATE} {WEEKDAY} {TIME}",
+            "size": "md",
+            "color": "#B08B4F",
+            "align": "center",
+            "weight": "bold",
+            "margin": "sm"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#404040"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "🔹 買入",
+                "color": "#4A74C2",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          }
+        ],
+        "spacing": "md",
+        "margin": "xl",
+        "paddingAll": "15px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": []
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "K金含金量",
+            "weight": "bold",
+            "size": "lg",
+            "color": "#6D5A45"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "sm",
+            "spacing": "xs",
+            "contents": [
+              {
+                "type": "text",
+                "text": "18K｜75.0%   ███████░░",
+                "size": "17px",
+                "color": "#C7A76C",
+                "wrap": true,
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "14K｜58.5% █████░░░░",
+                "size": "17px",
+                "color": "#BFAA8E",
+                "wrap": true,
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "10K｜41.7% ████░░░░░",
+                "size": "17px",
+                "color": "#A8A29A",
+                "wrap": true,
+                "margin": "md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "margin": "xl",
+        "color": "#404040"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "回收說明",
+            "weight": "bold",
+            "size": "lg",
+            "color": "#6D5A45"
+          },
+          {
+            "type": "text",
+            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "size": "md",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "2.回收重量及成色依燒熔後為主",
+            "size": "md",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "3.全程客戶面前操作，確保雙方權益",
+            "size": "md",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          }
+        ]
+      }
+    ],
+    "backgroundColor": "#FFF9F1",
+    "background": {
+      "type": "linearGradient",
+      "angle": "180deg",
+      "startColor": "#ffffe7",
+      "endColor": "#ffffe7",
+      "centerColor": "#E9DDC0"
+    }
+  },
+  "styles": {
+    "footer": {
+      "backgroundColor": "#000000"
+    }
+  }
+}
