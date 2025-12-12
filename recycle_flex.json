@@ -1,46 +1,35 @@
 {
   "type": "bubble",
   "size": "mega",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "text",
-            "text": "飾品回收流程",
-            "color": "#e6c35c",
-            "size": "xl",
-            "flex": 4,
-            "weight": "bold",
-            "align": "center"
-          }
-        ]
-      }
-    ],
-    "paddingAll": "20px",
-    "backgroundColor": "#422f00",
-    "paddingTop": "22px",
-    "spacing": "lg"
-  },
   "body": {
     "type": "box",
     "layout": "vertical",
     "contents": [
       {
+        "type": "text",
+        "text": "回收流程介紹",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#1C1c1c",
+        "align": "center"
+      },
+      {
+        "type": "separator",
+        "margin": "md",
+        "color": "#404040"
+      },
+      {
         "type": "box",
         "layout": "horizontal",
         "contents": [
           {
             "type": "text",
-            "text": "一、飾品檢驗",
+            "text": "一、初步鑑定",
             "gravity": "center",
             "flex": 0,
             "size": "md",
-            "weight": "bold"
+            "weight": "bold",
+            "color": "#4A3F2F"
           },
           {
             "type": "box",
@@ -69,15 +58,16 @@
           },
           {
             "type": "text",
-            "text": "快速初步檢驗",
+            "text": "不破壞快速檢驗",
             "size": "md",
             "gravity": "center",
             "margin": "xs",
-            "color": "#4d3900",
+            "color": "#C8A86D",
             "weight": "bold",
             "decoration": "underline"
           }
-        ]
+        ],
+        "margin": "xl"
       },
       {
         "type": "box",
@@ -124,24 +114,30 @@
             "contents": [
               {
                 "type": "text",
-                "text": "採XRF貴金屬分析儀",
+                "text": "1.採XRF貴金屬分析儀",
                 "size": "xs",
-                "margin": "md"
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "無須破壞飾品",
-                "size": "xs"
+                "text": "    快速分析成色",
+                "size": "xs",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "分析飾品成分及成色",
-                "size": "xs"
+                "text": "2.合格磅秤秤重",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "快速初步分析飾品",
-                "size": "xs"
+                "text": "3.初步評估回收價格",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               }
             ]
           }
@@ -154,120 +150,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "二、秤重確認",
-            "gravity": "center",
-            "flex": 0,
-            "size": "md",
-            "weight": "bold"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "filler",
-                "flex": 2
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [],
-                "cornerRadius": "xl",
-                "borderColor": "#996B1F",
-                "borderWidth": "semi-bold",
-                "width": "15px",
-                "height": "15px"
-              },
-              {
-                "type": "filler"
-              }
-            ],
-            "flex": 0,
-            "margin": "xs"
-          },
-          {
-            "type": "text",
-            "text": "合格磅秤秤重",
-            "size": "md",
-            "gravity": "center",
-            "margin": "xs",
-            "color": "#4d3900",
-            "weight": "bold",
-            "decoration": "underline"
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [],
-            "flex": 0,
-            "width": "88px"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "filler"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [],
-                    "width": "4px",
-                    "backgroundColor": "#996B1F"
-                  },
-                  {
-                    "type": "filler"
-                  }
-                ],
-                "flex": 1
-              }
-            ],
-            "width": "20px",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "使用合規磅秤秤重",
-                "size": "xs",
-                "margin": "md"
-              },
-              {
-                "type": "text",
-                "text": "秤重過程透明安心",
-                "size": "xs"
-              },
-              {
-                "type": "text",
-                "text": "初步評估回收價格",
-                "size": "xs"
-              }
-            ]
-          }
-        ],
-        "height": "88px"
-      },
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "text",
-            "text": "三、回收確認",
+            "text": "二、回收確認",
             "gravity": "center",
             "flex": 0,
             "size": "md",
@@ -304,7 +187,7 @@
             "size": "md",
             "gravity": "center",
             "margin": "xs",
-            "color": "#4d3900",
+            "color": "#C8A86D",
             "weight": "bold",
             "decoration": "underline"
           }
@@ -355,24 +238,24 @@
             "contents": [
               {
                 "type": "text",
-                "text": "說明銀樓回收規則",
+                "text": "1.說明回收規則",
                 "size": "xs",
-                "margin": "md"
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "與客戶確認是否同意回收",
-                "size": "xs"
+                "text": "2.確認是否同意回收",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "剪開飾品及火燒方式",
-                "size": "xs"
-              },
-              {
-                "type": "text",
-                "text": "作為最後檢驗步驟",
-                "size": "xs"
+                "text": "3.當面火燒檢驗",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               }
             ]
           }
@@ -385,7 +268,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "四、完成回收",
+            "text": "三、完成回收",
             "gravity": "center",
             "flex": 0,
             "size": "md",
@@ -423,7 +306,8 @@
             "gravity": "center",
             "margin": "xs",
             "weight": "bold",
-            "decoration": "underline"
+            "decoration": "underline",
+            "color": "#C8A86D"
           }
         ]
       },
@@ -472,27 +356,38 @@
             "contents": [
               {
                 "type": "text",
-                "text": "飾品回收完成",
+                "text": "1.回收完成",
                 "size": "xs",
-                "margin": "md"
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "門市內備有點鈔機",
-                "size": "xs"
+                "text": "2.點鈔機確認金額",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               },
               {
                 "type": "text",
-                "text": "快速安心的交付現金",
-                "size": "xs"
+                "text": "3.交付現金",
+                "size": "xs",
+                "margin": "sm",
+                "color": "#7A6E5D"
               }
             ]
           }
         ],
         "height": "88px"
       }
-    ]
+    ],
+    "backgroundColor": "#FFF9F1",
+    "background": {
+      "type": "linearGradient",
+      "angle": "180deg",
+      "startColor": "#ffffe7",
+      "endColor": "#ffffe7",
+      "centerColor": "#E9DDC0"
+    }
   }
 }
-
-
