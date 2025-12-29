@@ -39,7 +39,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "黃金價格",
+            "text": "黃金賣出價格",
             "size": "lg",
             "color": "#C8A86D",
             "weight": "bold",
@@ -137,4 +137,5 @@
     }
   }
 }
+
 
