@@ -153,7 +153,7 @@ def reply_total_price(reply_token):
             reply_token=reply_token,
             messages=[
                 FlexMessage(
-                    alt_text="價格",
+                    alt_text="鉑金回收",
                     contents=FlexContainer.from_dict(flex_dict)
                 )
             ]
