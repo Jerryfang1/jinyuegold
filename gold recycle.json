@@ -7,17 +7,30 @@
     "spacing": "lg",
     "contents": [
       {
-        "type": "text",
-        "text": "黃金回收",
-        "weight": "bold",
-        "size": "xl",
-        "color": "#1C1c1c",
-        "align": "center"
-      },
-      {
-        "type": "separator",
-        "margin": "md",
-        "color": "#404040"
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "報價時間",
+            "size": "xl",
+            "color": "#1C1c1c",
+            "weight": "bold",
+            "align": "center",
+            "margin": "sm"
+          },
+          {
+            "type": "text",
+            "text": "{DATE} {WEEKDAY} {TIME}",
+            "size": "md",
+            "color": "#B08B4F",
+            "align": "center",
+            "weight": "bold",
+            "margin": "sm"
+          }
+        ],
+        "paddingBottom": "none",
+        "spacing": "sm"
       },
       {
         "type": "box",
@@ -27,25 +40,16 @@
         "contents": [
           {
             "type": "text",
-            "text": "本日金價",
+            "text": "黃金回收價格",
             "size": "md",
-            "color": "#C8A86D",
+            "color": "#B8860B",
             "weight": "bold",
             "align": "center"
           },
           {
-            "type": "text",
-            "text": "{DATE} {WEEKDAY}",
-            "size": "md",
-            "color": "#B08B4F",
-            "align": "center",
-            "weight": "bold",
-            "margin": "md"
-          },
-          {
             "type": "separator",
             "margin": "md",
-            "color": "#D8C9A8"
+            "color": "#0000001A"
           },
           {
             "type": "box",
@@ -53,15 +57,39 @@
             "contents": [
               {
                 "type": "text",
-                "text": "🔹 買入",
-                "color": "#4A74C2",
+                "text": "飾金",
+                "color": "#C8A86D",
                 "flex": 2,
                 "gravity": "center",
-                "size": "sm"
+                "size": "md",
+                "weight": "bold"
               },
               {
                 "type": "text",
                 "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "條塊",
+                "color": "#C8A86D",
+                "flex": 2,
+                "gravity": "center",
+                "size": "md",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLDBAR_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -77,11 +105,11 @@
       {
         "type": "box",
         "layout": "vertical",
-        "contents": [ 
+        "contents": [
           {
             "type": "separator",
             "margin": "md",
-            "color": "#404040"
+            "color": "#0000001A"
           }
         ]
       },
@@ -110,13 +138,13 @@
             "size": "sm",
             "color": "#6A604C",
             "wrap": true,
-            "margin": "md"
+            "margin": "md",
+            "weight": "bold"
           }
         ],
         "margin": "md"
       }
     ],
-    "spacing": "lg",
     "backgroundColor": "#FFF9F1",
     "cornerRadius": "xxl",
     "background": {
@@ -128,6 +156,3 @@
     }
   }
 }
-
-
-
