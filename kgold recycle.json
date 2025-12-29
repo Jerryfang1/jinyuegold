@@ -53,11 +53,11 @@
             "contents": [
               {
                 "type": "text",
-                "text": "飾金",
+                "text": "飾金回收",
                 "color": "#C8A86D",
                 "flex": 2,
                 "gravity": "center",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold"
               },
               {
@@ -240,6 +240,7 @@
   }
 
 }
+
 
 
 
