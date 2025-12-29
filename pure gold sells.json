@@ -57,10 +57,11 @@
               {
                 "type": "text",
                 "text": "飾金",
-                "color": "#B08B4F",
+                "color": "#B8860B",
                 "gravity": "center",
                 "flex": 2,
-                "size": "md"
+                "size": "md",
+                "weight": "bold"
               },
               {
                 "type": "text",
@@ -81,10 +82,11 @@
               {
                 "type": "text",
                 "text": "條塊",
-                "color": "#B08B4F",
+                "color": "#B8860B",
                 "flex": 2,
                 "gravity": "center",
-                "size": "md"
+                "size": "md",
+                "weight": "bold"
               },
               {
                 "type": "text",
@@ -135,3 +137,4 @@
     }
   }
 }
+
