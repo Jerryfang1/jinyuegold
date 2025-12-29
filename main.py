@@ -210,6 +210,8 @@ def reply_gold_price(reply_token):
     # 取值
     gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
     gold_buy = int(matched.get("黃金買入", "N/A")) + 100
+    goldbar_sell = int(matched.get("黃金賣出", "N/A")) - 200
+    goldbar_buy = int(matched.get("黃金買入", "N/A")) + 400
     pt_sell = int(matched.get("鉑金賣出", "N/A")) - 100
     pt_buy = int(matched.get("鉑金買入", "N/A")) + 100
     date_str = matched.get("日期", "")
@@ -227,6 +229,8 @@ def reply_gold_price(reply_token):
         .replace("{WEEKDAY}", week_str)
         .replace("{GOLD_SELL}", str(gold_sell))
         .replace("{GOLD_BUY}", str(gold_buy))
+        .replace("{GOLDBAR_SELL}", str(goldbar_sell))
+        .replace("{GOLDBAR_BUY}", str(goldbar_buy))
         .replace("{PT_SELL}", str(pt_sell))
         .replace("{PT_BUY}", str(pt_buy))
     )
