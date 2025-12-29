@@ -45,7 +45,7 @@
           {
             "type": "separator",
             "margin": "md",
-            "color": "#D8C9A8"
+            "color": "#0000001A"
           },
           {
             "type": "box",
@@ -183,7 +183,7 @@
       {
         "type": "separator",
         "margin": "xl",
-        "color": "#404040"
+        "color": "#0000001A"
       },
       {
         "type": "box",
@@ -240,6 +240,7 @@
   }
 
 }
+
 
 
 
