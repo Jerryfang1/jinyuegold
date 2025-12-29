@@ -39,7 +39,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "黃金",
+            "text": "黃金價格",
             "size": "lg",
             "color": "#C8A86D",
             "weight": "bold",
@@ -47,7 +47,7 @@
           },
           {
             "type": "separator",
-            "color": "#404040",
+            "color": "#0000001A",
             "margin": "md"
           },
           {
@@ -56,11 +56,11 @@
             "contents": [
               {
                 "type": "text",
-                "text": "🔸 賣出",
-                "color": "#C05A5A",
+                "text": "飾金",
+                "color": "#B08B4F",
                 "gravity": "center",
                 "flex": 2,
-                "size": "sm"
+                "size": "md"
               },
               {
                 "type": "text",
@@ -80,15 +80,15 @@
             "contents": [
               {
                 "type": "text",
-                "text": "🔹 買入",
-                "color": "#4A74C2",
+                "text": "條塊",
+                "color": "#B08B4F",
                 "flex": 2,
                 "gravity": "center",
-                "size": "sm"
+                "size": "md"
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{GOLDBAR_SELL} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -134,9 +134,4 @@
       "centerColor": "#E9DDC0"
     }
   }
-
 }
-
-
-
-
