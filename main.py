@@ -131,7 +131,7 @@ def reply_total_price(reply_token):
     time_str = matched.get("時間", "")
 
     # 建立 Flex Message 卡片
-    with open("gold_flex.json", "r", encoding="utf-8") as f:
+    with open("pt recycle.json", "r", encoding="utf-8") as f:
         template_str = f.read()
     # 替換內容（記得 JSON 內使用的 placeholder 必須是獨特的字，例如 {GOLD_SELL}）
     template_str = (
