@@ -39,7 +39,7 @@
         "contents": [
           {
             "type": "text",
-            "text": "黃金賣出價格",
+            "text": "黃金價格",
             "size": "md",
             "color": "#B8860B",
             "weight": "bold",
@@ -56,11 +56,11 @@
             "contents": [
               {
                 "type": "text",
-                "text": "飾金",
+                "text": "飾金賣出",
                 "color": "#C8A86D",
                 "gravity": "center",
                 "flex": 2,
-                "size": "md",
+                "size": "sm",
                 "weight": "bold"
               },
               {
@@ -81,11 +81,11 @@
             "contents": [
               {
                 "type": "text",
-                "text": "條塊",
+                "text": "條塊賣出",
                 "color": "#C8A86D",
                 "flex": 2,
                 "gravity": "center",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold"
               },
               {
@@ -137,6 +137,7 @@
     }
   }
 }
+
 
 
 
