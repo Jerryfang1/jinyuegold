@@ -41,7 +41,7 @@
             "type": "text",
             "text": "黃金賣出價格",
             "size": "lg",
-            "color": "#C8A86D",
+            "color": "#B8860B",
             "weight": "bold",
             "align": "center"
           },
@@ -57,7 +57,7 @@
               {
                 "type": "text",
                 "text": "飾金",
-                "color": "#B8860B",
+                "color": "#C8A86D",
                 "gravity": "center",
                 "flex": 2,
                 "size": "md",
@@ -82,7 +82,7 @@
               {
                 "type": "text",
                 "text": "條塊",
-                "color": "#B8860B",
+                "color": "#C8A86D",
                 "flex": 2,
                 "gravity": "center",
                 "size": "md",
@@ -137,5 +137,6 @@
     }
   }
 }
+
 
 
