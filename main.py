@@ -69,7 +69,9 @@ def handle_postback(event):
     elif data == "action=gold":
         reply_gold_price(event.reply_token)
     elif data == "action=kgoldrecycle":
-        reply_kgoldrecycle_today(event.reply_token)    
+        reply_kgoldrecycle_today(event.reply_token)  
+    elif data == "action=ptrecycle":
+        reply_ptrecycle_price(event.reply_token)  
     elif data == "action=gold_today":
         reply_gold_today(event.reply_token)
         
