@@ -17,7 +17,7 @@
       {
         "type": "separator",
         "margin": "md",
-        "color": "#404040"
+        "color": "#0000001A"
       },
       {
         "type": "box",
@@ -27,9 +27,9 @@
         "contents": [
           {
             "type": "text",
-            "text": "本日金價",
+            "text": "報價時間",
             "size": "md",
-            "color": "#C8A86D",
+            "color": "#B8860B",
             "weight": "bold",
             "align": "center"
           },
@@ -53,11 +53,12 @@
             "contents": [
               {
                 "type": "text",
-                "text": "🔹 買入",
-                "color": "#4A74C2",
+                "text": "飾金",
+                "color": "#C8A86D",
                 "flex": 2,
                 "gravity": "center",
-                "size": "sm"
+                "size": "md",
+                "weight": "bold"
               },
               {
                 "type": "text",
@@ -239,6 +240,7 @@
   }
 
 }
+
 
 
 
