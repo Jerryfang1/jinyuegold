@@ -74,7 +74,7 @@ def handle_postback(event):
         reply_gold_today(event.reply_token)
         
 ########################################################################
-def reply_total_price(reply_token):
+def reply_ptrecycle_price(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
     print(f"[DEBUG] 查詢今日金價，今日日期：{today_str}")
