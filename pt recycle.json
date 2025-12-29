@@ -1,190 +1,136 @@
 {
   "type": "bubble",
-  "size": "mega",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "報價時間",
-        "size": "md",
-        "color": "#1C1c1c",
-        "weight": "bold",
-        "align": "center"
-      },
-      {
-        "type": "text",
-        "text": "🗓️ {DATE} {WEEKDAY} {TIME}",
-        "size": "lg",
-        "color": "#B08B4F",
-        "align": "center",
-        "weight": "bold"
-      },
-      {
-        "type": "text",
-        "text": "會員價格",
-        "size": "md",
-        "weight": "bold",
-        "align": "center"
-      }
-    ],
-    "paddingBottom": "none",
-    "spacing": "sm"
-  },
+  "size": "kilo",
   "body": {
     "type": "box",
     "layout": "vertical",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "backgroundColor": "#ffffe0",
-        "cornerRadius": "xxl",
-        "contents": [
-          {
-            "type": "text",
-            "text": "🟡 黃金",
-            "size": "md",
-            "color": "#1c1c1c",
-            "weight": "bold"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "🔸 賣出",
-                "color": "#1c1c1c",
-                "flex": 2,
-                "gravity": "center"
-              },
-              {
-                "type": "text",
-                "text": "{GOLD_SELL} 元／錢",
-                "color": "#1c1c1c",
-                "flex": 3,
-                "size": "xl",
-                "align": "end",
-                "gravity": "center"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "🔹 買入",
-                "color": "#1c1c1c",
-                "flex": 2,
-                "gravity": "center"
-              },
-              {
-                "type": "text",
-                "text": "{GOLD_BUY} 元／錢",
-                "align": "end",
-                "color": "#1c1c1c",
-                "flex": 3,
-                "size": "xl"
-              }
-            ]
-          }
-        ],
-        "paddingAll": "15px",
-        "spacing": "lg"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "backgroundColor": "#3f3f3f",
-        "cornerRadius": "xxl",
-        "contents": [
-          {
-            "type": "text",
-            "text": "⚪ 鉑金",
-            "size": "md",
-            "color": "#ffffff",
-            "weight": "bold"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "🔸 賣出",
-                "color": "#FFFFFF",
-                "flex": 2,
-                "gravity": "center"
-              },
-              {
-                "type": "text",
-                "text": "{PT_SELL} 元／錢",
-                "align": "end",
-                "color": "#FFFFFF",
-                "flex": 3,
-                "size": "xl"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "🔹 買入",
-                "color": "#FFFFFF",
-                "flex": 2,
-                "gravity": "center"
-              },
-              {
-                "type": "text",
-                "text": "{PT_BUY} 元／錢",
-                "align": "end",
-                "color": "#FFFFFF",
-                "size": "xl",
-                "flex": 3
-              }
-            ]
-          }
-        ],
-        "spacing": "lg",
-        "paddingAll": "15px"
-      }
-    ],
-    "spacing": "lg"
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
+    "spacing": "lg",
     "contents": [
       {
         "type": "text",
-        "text": "金價波動頻繁，歡迎現場洽詢",
+        "text": "鉑金回收",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#1C1c1c",
         "align": "center"
       },
       {
-        "type": "text",
-        "text": "實際成交價格依店內報價為準",
-        "align": "center",
-        "margin": "md"
+        "type": "separator",
+        "margin": "md",
+        "color": "#0000001A"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "backgroundColor": "#F3EDE0",
+        "cornerRadius": "xxl",
+        "contents": [
+          {
+            "type": "text",
+            "text": "報價時間",
+            "size": "md",
+            "color": "#B8860B",
+            "weight": "bold",
+            "align": "center"
+          },
+          {
+            "type": "text",
+            "text": "{DATE} {WEEKDAY}",
+            "size": "md",
+            "color": "#B08B4F",
+            "align": "center",
+            "weight": "bold",
+            "margin": "md"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#0000001A"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "鉑金回收",
+                "color": "#C8A86D",
+                "flex": 2,
+                "gravity": "center",
+                "size": "md",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{PT_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          }
+        ],
+        "spacing": "md",
+        "margin": "xl",
+        "paddingAll": "15px"
+      },
+      {
+        "type": "separator",
+        "margin": "xl",
+        "color": "#0000001A"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "回收說明",
+            "weight": "bold",
+            "size": "md",
+            "color": "#6D5A45"
+          },
+          {
+            "type": "text",
+            "text": "1.電鍍層、焊點、鑲嵌物不計重量",
+            "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "2.回收重量及成色依燒熔後為主",
+            "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          },
+          {
+            "type": "text",
+            "text": "3.全程客戶面前操作，確保雙方權益",
+            "size": "sm",
+            "color": "#6A604C",
+            "wrap": true,
+            "margin": "md"
+          }
+        ]
       }
     ],
-    "paddingBottom": "xl"
+    "backgroundColor": "#FFF9F1",
+    "background": {
+      "type": "linearGradient",
+      "angle": "180deg",
+      "startColor": "#ffffe7",
+      "endColor": "#ffffe7",
+      "centerColor": "#E9DDC0"
+    }
   },
   "styles": {
-    "header": {
-      "backgroundColor": "#f5f0e8"
-    },
-    "body": {
-      "backgroundColor": "#f5f0e8"
-    },
     "footer": {
-      "backgroundColor": "#f5f0e8"
+      "backgroundColor": "#000000"
     }
   }
 }
