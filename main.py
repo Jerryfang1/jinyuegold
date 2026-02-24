@@ -252,6 +252,7 @@ def reply_gold_price(reply_token):
         )
     )
 ########################################################################
+#黃金回收流程
 def reply_recycle_info(reply_token):
     with open("recycle_flex.json", "r", encoding="utf-8") as f:
         recycle_json = json.load(f)
@@ -268,6 +269,7 @@ def reply_recycle_info(reply_token):
         )
     )
 ########################################################################
+#K金回收價格
 def reply_kgoldrecycle_today(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
@@ -318,7 +320,6 @@ def reply_kgoldrecycle_today(reply_token):
     print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
-    gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
     gold_buy = int(matched.get("黃金買入", "N/A")) + 100
     date_str = matched.get("日期", "")
     week_str = matched.get("星期", "")
@@ -333,7 +334,6 @@ def reply_kgoldrecycle_today(reply_token):
         .replace("{DATE}", date_str)
         .replace("{TIME}", time_str)
         .replace("{WEEKDAY}", week_str)
-        .replace("{GOLD_SELL}", str(gold_sell))
         .replace("{GOLD_BUY}", str(gold_buy))
     )
     
@@ -352,6 +352,7 @@ def reply_kgoldrecycle_today(reply_token):
         )
     )
 ########################################################################
+#查詢黃金賣價
 def reply_gold_today(reply_token):
     today = datetime.now()
     today_str = today.strftime("%Y/%m/%d")
