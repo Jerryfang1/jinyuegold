@@ -418,9 +418,7 @@ def reply_gold_today(reply_token):
         .replace("{TIME}", time_str)
         .replace("{WEEKDAY}", week_str)
         .replace("{GOLD_SELL}", str(gold_sell))
-        .replace("{GOLD_BUY}", str(gold_buy))
         .replace("{GOLDBAR_SELL}", str(goldbar_sell))
-        .replace("{GOLDBAR_BUY}", str(goldbar_buy))
     )
     
     # 轉回 dict 格式
