@@ -210,9 +210,9 @@ def reply_gold_price(reply_token):
     print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
-    gold_sell = int(matched.get("黃金賣出", "N/A")) - 300
+    gold_sell = int(matched.get("黃金賣出", "N/A")) - 400
     gold_buy = int(matched.get("黃金買入", "N/A")) + 100
-    goldbar_sell = int(matched.get("黃金賣出", "N/A")) - 200
+    goldbar_sell = int(matched.get("黃金賣出", "N/A")) - 300
     goldbar_buy = int(matched.get("黃金買入", "N/A")) + 400
     pt_sell = int(matched.get("鉑金賣出", "N/A")) - 100
     pt_buy = int(matched.get("鉑金買入", "N/A")) + 100
