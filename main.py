@@ -310,7 +310,12 @@ def reply_kgoldrecycle_today(reply_token):
     print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
-    gold_buy = int(matched.get("黃金買入", "N/A")) + 100
+    22kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.83
+    18kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.58
+    14kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.43
+    12kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.38
+    10kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.35
+    9kgold_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.25
     date_str = matched.get("日期", "")
     week_str = matched.get("星期", "")
     time_str = matched.get("時間", "")
@@ -324,7 +329,12 @@ def reply_kgoldrecycle_today(reply_token):
         .replace("{DATE}", date_str)
         .replace("{TIME}", time_str)
         .replace("{WEEKDAY}", week_str)
-        .replace("{GOLD_BUY}", str(gold_buy))
+        .replace("{22KGOLD_BUY}", str(22kgold_buy))
+        .replace("{18KGOLD_BUY}", str(18kgold_buy))
+        .replace("{14KGOLD_BUY}", str(14kgold_buy))
+        .replace("{12KGOLD_BUY}", str(12kgold_buy))
+        .replace("{10KGOLD_BUY}", str(10kgold_buy))
+        .replace("{9KGOLD_BUY}", str(9kgold_buy))
     )
     
     # 轉回 dict 格式
