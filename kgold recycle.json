@@ -146,7 +146,7 @@
               {
                 "type": "text",
                 "text": "10K金回收",
-                "color": "#d7d2cb",
+                "color": "#BEBEBE",
                 "flex": 2,
                 "gravity": "center",
                 "size": "sm",
@@ -323,7 +323,7 @@
                     "type": "text",
                     "text": "10K｜41.7%",
                     "size": "sm",
-                    "color": "#d7d2cb",
+                    "color": "#BEBEBE",
                     "wrap": true,
                     "margin": "xs",
                     "flex": 4
@@ -332,7 +332,7 @@
                     "type": "text",
                     "text": "████░░░░░░",
                     "size": "sm",
-                    "color": "#d7d2cb",
+                    "color": "#BEBEBE",
                     "wrap": true,
                     "margin": "xs",
                     "flex": 6
