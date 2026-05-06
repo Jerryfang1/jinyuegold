@@ -62,7 +62,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{22KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -85,7 +85,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{18KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -108,7 +108,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{14KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -131,7 +131,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{12KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -154,7 +154,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{10KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
@@ -177,7 +177,7 @@
               },
               {
                 "type": "text",
-                "text": "{GOLD_BUY} 元/錢",
+                "text": "{9KGOLD_BUY} 元/錢",
                 "align": "end",
                 "color": "#1c1c1c",
                 "flex": 3,
