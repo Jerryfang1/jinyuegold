@@ -123,7 +123,7 @@
                     "size": "sm",
                     "color": "#e6c619",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
@@ -147,7 +147,7 @@
                     "size": "sm",
                     "color": "#C7A76C",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
@@ -171,7 +171,7 @@
                     "size": "sm",
                     "color": "#BFAA8E",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
@@ -195,7 +195,7 @@
                     "size": "sm",
                     "color": "#a8a29a",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
@@ -219,7 +219,7 @@
                     "size": "sm",
                     "color": "#d7d2cb",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
@@ -243,7 +243,7 @@
                     "size": "sm",
                     "color": "#d9d9d6",
                     "wrap": true,
-                    "margin": "md",
+                    "margin": "xs",
                     "flex": 6
                   }
                 ]
