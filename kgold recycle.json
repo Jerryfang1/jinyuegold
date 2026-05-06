@@ -53,8 +53,123 @@
             "contents": [
               {
                 "type": "text",
-                "text": "飾金回收",
-                "color": "#C8A86D",
+                "text": "22K金回收",
+                "color": "#e6c619",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "18K金回收",
+                "color": "#C7A76C",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "14K金回收",
+                "color": "#BFAA8E",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "12K金回收",
+                "color": "#a8a29a",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "10K金回收",
+                "color": "#d7d2cb",
+                "flex": 2,
+                "gravity": "center",
+                "size": "sm",
+                "weight": "bold"
+              },
+              {
+                "type": "text",
+                "text": "{GOLD_BUY} 元/錢",
+                "align": "end",
+                "color": "#1c1c1c",
+                "flex": 3,
+                "size": "20px"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "9K金回收",
+                "color": "#d9d9d6",
                 "flex": 2,
                 "gravity": "center",
                 "size": "sm",
