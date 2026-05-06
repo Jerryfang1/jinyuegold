@@ -310,12 +310,12 @@ def reply_kgoldrecycle_today(reply_token):
     print(f"[DEBUG] 最終使用日期：{used_date_str}")
 
     # 取值
-    gold22k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.83
-    gold18k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.58
-    gold14k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.43
-    gold12k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.38
-    gold10k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.35
-    gold9k_buy = (int(matched.get("黃金買入", "N/A")) + 100)*0.25
+    gold22k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.83
+    gold18k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.58
+    gold14k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.43
+    gold12k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.38
+    gold10k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.35
+    gold9k_buy = int((matched.get("黃金買入", "N/A")) + 100)*0.25
     date_str = matched.get("日期", "")
     week_str = matched.get("星期", "")
     time_str = matched.get("時間", "")
